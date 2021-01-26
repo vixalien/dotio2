@@ -1,0 +1,14 @@
+# env
+.env
+
+# explosiv builds
+/_static/
+/out/
+/__explosiv__/
+
+# packages
+/node_modules/
+
+# build assets
+/public/*.js
+/public/css

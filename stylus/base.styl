@@ -1,0 +1,176 @@
+*,
+*::before,
+*::after
+	box-sizing border-box
+
+:root
+	/* Themes */
+	--secondary #666
+
+	/* Variables */
+	--fg #333
+	--bg #fff
+
+	--heading-fg #000
+	--link #0169ec
+
+	/* Paddings */
+	--padding-top    30px
+	--padding-bottom 30px
+	--padding-right  20px
+	--padding-left   20px
+	--max-width 620px
+
+	/* Box shadow */
+	--box-shadow 0 0 0px 3px #bac7d4
+
+/* Dark Mode */
+@media (prefers-color-scheme dark)
+	:root
+		--secondary #8e8e8e
+		--fg #a0a0a0
+		--bg #030f1b
+		--heading-fg #fff
+		--link #fff
+
+html
+	font-family system-ui, /* macOS 10.11-10.12 */ -apple-system, /* Windows 6+ */ "Segoe UI", /* Android 4+ */ "Roboto", /* Ubuntu 10.10+ */ "Ubuntu", /* Gnome 3+ */ "Cantarell", /* KDE Plasma 5+ */ "Noto Sans", /* fallback */ sans-serif, /* macOS emoji */ "Apple Color Emoji", /* Windows emoji */ "Segoe UI Emoji", /* Windows emoji */ "Segoe UI Symbol", /* Linux emoji */ "Noto Color Emoji"
+code,
+kbd,
+samp,
+pre
+	font-family /* macOS 10.10+ */ "Menlo", /* Windows 6+ */ "Consolas", /* Android 4+ */ "Roboto Mono", /* Ubuntu 10.10+ */ "Ubuntu Monospace", /* KDE Plasma 5+ */ "Noto Mono", /* KDE Plasma 4+ */ "Oxygen Mono", /* Linux/OpenOffice fallback */ "Liberation Mono", /* fallback */ monospace, /* macOS emoji */ "Apple Color Emoji", /* Windows emoji */ "Segoe UI Emoji", /* Windows emoji */ "Segoe UI Symbol", /* Linux emoji */ "Noto Color Emoji"
+
+html,
+body
+	padding 0
+	margin 0
+	font-size 18px
+	color var(--fg)
+	background-color var(--bg)
+	scroll-behavior smooth
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5
+	margin 0 0 1rem 0
+	font-weight 500
+	line-height 1.3
+	color var(--heading-fg)
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+
+h4:not(:first-child),
+h5:not(:first-child)
+	margin 0 0 1rem 0
+
+/* Increased margin on additional headings */
+h1:not(:first-child),
+h2:not(:first-child),
+h3:not(:first-child)
+	margin-top 1.5rem
+
+/* Heading individual styles */
+// h1
+// 	font-size 3.5rem
+
+// h2
+// 	font-size 2.5rem
+
+// h3
+// 	font-size 1.8rem
+
+// h4
+// 	font-size 1.5rem
+
+/* Typed */
+p,
+ol,
+ul,
+dl,
+table
+	margin 0 0 1.5rem 0
+	// font-size 1.15rem
+	line-height 1.4
+	// @media screen and (min-width 750px)
+	// 	margin 0 0 2rem 0
+	// 	font-size 1.25rem
+
+// ul li p
+// 	margin 0
+
+// /* Remove extra margin for nested lists */
+// ul li ul
+// 	padding-left 1rem
+// 	margin 0
+
+// ul li ul li
+// 	margin .25rem 0
+
+// ol li ol
+// 	margin-bottom 0
+
+/* inline code */
+code
+	padding 0 5px
+	font-size 0.9em
+	border 1px solid
+	border-radius 5px
+
+pre code
+	display block
+	padding 10px
+	border-radius 0
+	color #b2b6bb
+	background-color #0a1826
+
+.description p, p.description
+	color var(--secondary)
+	font-weight 400
+	// font-size 1.5rem
+
+hr
+	margin 0
+	border 0
+	border-top 1px solid var(--secondary)
+
+/* links */
+a
+	color inherit
+	text-decoration none
+	border 0
+	border-bottom 1px solid transparent
+a:hover
+	text-decoration none
+	color var(--link)
+	border-bottom-color currentColor
+
+main a
+	border-bottom 2px solid var(--link)
+	font-weight 500
+
+main a:hover
+	color var(--link)
+
+// loading
+// body::before
+// 	top 0 
+// 	position fixed 
+// 	content '' 
+// 	z-index 10 
+// 	background-image linear-gradient(45deg, var(--heading-fg) 100%, transparent)
+// 	left 0 
+// 	right 0 
+// 	background-size 100vw 10px 
+// 	background-position -100vw 
+// 	background-repeat no-repeat 
+// 	height 0 
+// 	[data-loading] &
+// 		background-position 0 
+// 		transition 7s background-position cubic-bezier(0.26, 0.1, 0, 0.94), .3s height 
+// 		height 5px 
+// 	[data-loading="new"] &
+// 		transition-delay 1s

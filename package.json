@@ -1,0 +1,40 @@
+{
+  "name": "dotio2",
+  "version": "0.0.0",
+  "description": "Static site for vixalien",
+  "private": true,
+  "scripts": {
+    "build": "explosiv build",
+    "start": "explosiv start",
+    "dev": "explosiv dev",
+    "prebuild": "npm run build:js && npm run build:css",
+    "build:js": "node src/build-js",
+    "build:css": "stylus stylus/app.styl -o public/css/app.css -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vixalien/dotio2.git"
+  },
+  "keywords": [
+    "dotio",
+    "vixalien",
+    "static",
+    "site"
+  ],
+  "author": "vixalien",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/vixalien/dotio2/issues"
+  },
+  "homepage": "https://github.com/vixalien/dotio2#readme",
+  "dependencies": {
+    "esbuild": "^0.8.34",
+    "explosiv": "^2.0.0",
+    "front-matter": "^4.0.2",
+    "glob": "^7.1.6",
+    "marked": "^1.2.7",
+    "prismjs": "^1.23.0",
+    "stylus": "^0.54.8"
+  },
+  "devDependencies": {}
+}
