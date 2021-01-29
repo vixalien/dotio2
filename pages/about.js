@@ -4,7 +4,6 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import Container from '../components/container';
 import Intro from '../components/intro';
-import Button from '../components/button';
 
 export default () => {
 	return <>
@@ -13,23 +12,32 @@ export default () => {
 			<link rel="canonical" href={process.env.URL+'/about'}/>
 			<meta name="description" content="vixalien is a merry web developer"/>
 		</Head>
-		<Header/>
-		<Intro
-			title="About vixalien"
-			description="Stuff related to vixalien"
-		/>
-		<Container tag="main">
-			<p>
-				Hi! I'm Shema Angelo, or vixalien. I'm a web developer and (designer? maybe).
-				I love to build things from scratch while I can. Here you can find my projects,
-				posts and whatever. Stay tuned!
-			</p>
-			<h2>Links</h2>
-			<p>
-				<Button text="Github" icon="github" href="https://www.github.com/vixalien"/>
-				<Button text="Donate" icon="paypal" href="https://www.paypal.com"/>
-			</p>
+		<Container>
+			<Header/>
+			<main>
+				<Intro title="About vixalien"/>
+				<p>
+					Hi! I'm Shema Angelo, or vixalien. I'm a web developer and (designer? maybe).
+					I love to build things from scratch while I can. Here you can find my projects,
+					posts and whatever. Stay tuned!
+				</p>
+				<h2>Links</h2>
+				<ul>
+					<li>
+						Email: <a id="emailme">Loading</a>
+						<script type='text/javascript' html={`
+							// foil spam bots
+							var email = 'geoangercola';
+							email += '@gmail.com';
+							var emailme = document.getElementById('emailme')
+							emailme.href = 'mailto:'+email;
+							emailme.innerHTML = email;
+						`}/>
+					</li>
+					<li>Github: <a href="https://www.github.com/vixalien">@vixalien</a></li>
+					<li>Paypal: <a href="https://www.paypal.com">Click here</a></li>
+				</ul>
+			</main>
 		</Container>
-		<Footer/>
 	</>
 }

@@ -11,14 +11,15 @@ export default () => {
 			<link rel="canonical" href={process.env.URL+'/offline'}/>
 			<meta name="description" content="sorry but you are offline"/>
 		</Head>
-		<Header/>
-		<Intro
-			title="You are offline"
-		/>
 		<Container tag="main">
+			<Header/>
+			<Intro
+				title="You are offline"
+			/>
 			<p>
 				Sorry, but you are offline, we'll try to reload the page once you are back online
 			</p>
 		</Container>
+		<script html={`ononline = () => location.reload()`}/>
 	</>
 }

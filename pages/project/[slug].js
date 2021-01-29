@@ -10,8 +10,8 @@ import Intro from '../../components/intro';
 import Footer from '../../components/footer';
 import Container from '../../components/container';
 
-const Post = ({
-	post: {
+const Projects = ({
+	projects: {
 		content,
 		slug,
 		attributes: { title, created, description },
@@ -20,7 +20,7 @@ const Post = ({
 	<>
 		<Head>
 			<title>{title} - vixalien</title>
-			<link rel="canonical" href={process.env.URL+'/post/'+slug}/>
+			<link rel="canonical" href={process.env.URL+'/projects/'+slug}/>
 			<meta name="description" content={description} />
 		</Head>
 		<Container tag="main">
@@ -36,13 +36,13 @@ const Post = ({
 )
 
 export const getPaths = async () => {
-	const files = await readdir(resolve('blog'))
+	const files = await readdir(resolve('projects'))
 	return files.map((path) => path.slice(0, path.length - 3))
 }
 
 export const getProps = async (slug) => {
-	let post = await readFile(join('./blog', `${slug}.md`), 'utf-8')
-	post = matter(post)
+	let projects = await readFile(join('./projects', `${slug}.md`), 'utf-8')
+	projects = matter(projects)
 
 	const renderer = new marked.Renderer()
 
@@ -57,9 +57,9 @@ export const getProps = async (slug) => {
 		},
 	})
 
-	post.slug = slug
-	post.content = marked(post.body)
-	return { post }
+	projects.slug = slug
+	projects.content = marked(projects.body)
+	return { projects }
 }
 
-export default Post;
+export default Projects;

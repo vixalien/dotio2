@@ -1,21 +1,29 @@
-:root {
+:root
 	/* Themes */
-	--secondary: #666;
+	--secondary #666
 
 	/* Variables */
-	--fg: #333;
-	--bg: #fff;
+	--fg #333
+	--bg #fff
 
-	--heading-fg: #000;
-	--link: #0169ec;
+	--heading-fg #000
+	--link #0169ec
 
 	/* Paddings */
-	--padding-top: 30px;
-	--padding-bottom: 30px;
-	--padding-right: 10px;
-	--padding-left: 10px;
-	--max-width: 620px;
+	--padding-top    30px
+	--padding-bottom 30px
+	--padding-right  20px
+	--padding-left   20px
+	--max-width 620px
 
 	/* Box shadow */
-	--box-shadow: 0 0 0px 3px #bac7d4;
-}
+	--box-shadow 0 0 0px 3px #bac7d4
+
+/* Dark Mode */
+@media (prefers-color-scheme dark)
+	:root
+		--secondary #8e8e8e
+		--fg #a0a0a0
+		--bg #030f1b
+		--heading-fg #fff
+		--link #5a99ff

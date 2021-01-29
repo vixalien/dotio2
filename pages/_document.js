@@ -8,20 +8,18 @@ let Document = () => {
 		<head>
 			<meta charset="utf-8"/>
 			<meta name="viewport" content="width=device-width,initial-scale=1"/>
+			<link rel="stylesheet" href="/css/app.css"/>
 			<meta name="theme-color" content="#0a1826" />
-			<link rel="shortcut icon" href="/favicon.ico" async/>
+			<link rel="shortcut icon" href="/favicon.ico"/>
 			<link
 				rel="apple-touch-icon"
 				sizes="180x180"
 				href="/favicon/android-chrome-192x192.png"
-				async
 			/>
-			<style defer>
-				{fs.readFileSync(resolve('public/css/app.css'), 'utf8')}
-			</style>
 		</head>
 		<body>
 			<div class="root"></div>
+			<script src="/bundle.js" defer/>
 		</body>
 	</html>)
 }
