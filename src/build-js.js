@@ -5,7 +5,7 @@ let { startService } = require('esbuild');
 
 let js = glob.sync('js/*.js')
 	.map(path => fs.readFileSync(resolve(path)))
-	.join('\n')
+	.join(';\n')
 
 let single = glob.sync('js/single/**/*.js')
 
