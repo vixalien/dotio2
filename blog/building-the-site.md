@@ -4,14 +4,12 @@ description: The perilous journey of building this site!
 created: 1611671223822
 ---
 
-Oof I'm done!
+Checks for the site:
 
-It's been really really hard to build this site, why?
-
-- I wanted something simple
-- I wanted something beautiful visually
-- I wanted something custom-looking
-- I wanted something up to today's standards
+- Simple
+- Beautiful visually
+- Custom-looking
+- Up to today's standards
 
 If you know about designing and developing, you noticed that many of those elements don't usually go together. For instance, A site can not usually be simple and good-looking. [Bellard's site](http://bellard.org) for example, is the simplest blog I've ever seen, yet it is by far not good looking as it is built with HTML only (no additional styles).
 
