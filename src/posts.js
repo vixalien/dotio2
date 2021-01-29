@@ -11,6 +11,7 @@ let blogs = fs
 	.map((blog) => [
 		blog.replace(/\.mdx?$/, ""),
 		fm(fs.readFileSync(resolve(blogsPath, blog), "utf8")).attributes,
-	]);
+	])
+	.sort(([_, a], [$, b]) => b.created - a.created);
 
 module.exports = Object.fromEntries(blogs);

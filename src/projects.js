@@ -11,6 +11,7 @@ let projects = fs
 	.map((project) => [
 		project.replace(/\.mdx?$/, ""),
 		fm(fs.readFileSync(resolve(projectsPath, project), "utf8")).attributes,
-	]);
+	])
+	.sort(([_, a], [$, b]) => b.created - a.created);
 
 module.exports = Object.fromEntries(projects);
