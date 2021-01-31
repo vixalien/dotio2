@@ -12,7 +12,6 @@ export default () => {
 	return <>
 		<Head>
 			<title>vixalien</title>
-			<link rel="canonical" href={process.env.URL+'/'}/>
 			<Canonical path='/'/>
 			<meta name="description" content="homepage of vixalien's site"/>
 		</Head>
