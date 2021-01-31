@@ -1,5 +1,6 @@
 import Explosiv, { Head } from 'explosiv';
 
+import Canonical from '../components/canonical';
 import Header from '../components/header';
 import Intro from '../components/intro';
 import Container from '../components/container';
@@ -8,7 +9,7 @@ export default () => {
 	return <>
 		<Head>
 			<title>date - vixalien</title>
-			<link rel="canonical" href={process.env.URL+'/offline'}/>
+			<Canonical path='/date'/>
 			<meta name="description" content="sorry but you are offline"/>
 		</Head>
 		<Container tag="main">

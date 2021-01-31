@@ -1,5 +1,6 @@
 import Explosiv, { Head } from 'explosiv';
 
+import Canonical from '../components/canonical';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import Welcome from '../components/welcome';
@@ -12,6 +13,7 @@ export default () => {
 		<Head>
 			<title>vixalien</title>
 			<link rel="canonical" href={process.env.URL+'/'}/>
+			<Canonical path='/'/>
 			<meta name="description" content="homepage of vixalien's site"/>
 		</Head>
 		<Container>

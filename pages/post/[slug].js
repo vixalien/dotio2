@@ -6,6 +6,7 @@ import matter from 'front-matter'
 import marked from 'marked'
 import prism from 'prismjs'
 
+import Canonical from '../../components/canonical';
 import Header from '../../components/header';
 import Intro from '../../components/intro';
 import Footer from '../../components/footer';
@@ -21,7 +22,7 @@ const Post = ({
 	<>
 		<Head>
 			<title>{title} - vixalien</title>
-			<link rel="canonical" href={process.env.URL+'/post/'+slug}/>
+			<Canonical path={'/post/'+slug}/>
 			<meta name="description" content={description} />
 		</Head>
 		<Container tag="main">
