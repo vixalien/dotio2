@@ -1,5 +1,6 @@
 import Explosiv, { Head } from 'explosiv'
-import { readFile, readdir } from 'fs/promises'
+import promises from 'fs'
+let { readFile, readdir } = promises
 import { join , resolve } from 'path'
 import matter from 'front-matter'
 import marked from 'marked'
