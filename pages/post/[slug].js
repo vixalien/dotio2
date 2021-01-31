@@ -24,6 +24,7 @@ const Post = ({
 			<title>{title} - vixalien</title>
 			<Canonical path={'/post/'+slug}/>
 			<meta name="description" content={description} />
+			<link rel="stylesheet" href="/css/code.css"/>
 		</Head>
 		<Container tag="main">
 			<Header/>

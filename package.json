@@ -9,7 +9,9 @@
     "dev": "explosiv dev",
     "prebuild": "npm run build:js && npm run build:css",
     "build:js": "node src/build-js",
-    "build:css": "stylus stylus/app.styl -o public/css/app.css -c"
+    "build:css": "npm run build:css-all && npm run build:css-code",
+    "build:css-all": "stylus stylus/app.styl -o public/css/app.css -c",
+    "build:css-code": "stylus stylus/prism.styl -o public/css/code.css -c"
   },
   "repository": {
     "type": "git",

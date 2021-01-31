@@ -24,6 +24,7 @@ const Projects = ({
 			<title>{title} - vixalien</title>
 			<Canonical path={'/project/'+slug}/>
 			<meta name="description" content={description} />
+			<link rel="stylesheet" href="/css/code.css"/>
 		</Head>
 		<Container tag="main">
 			<Header/>
