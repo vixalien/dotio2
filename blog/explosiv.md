@@ -40,7 +40,13 @@ npm i explosiv
 And install explosiv globally, so that you can use the CLI wherever you are...
 
 ```bash
-npm i explosiv
+npm i explosiv -g
+```
+
+Or, to keep up with modern standards, although I personally like the first syntax more, use `npx` to always use the latest version of explosiv
+
+```bash
+npx explosiv
 ```
 
 To make an Explosiv site, just create a folder and generate a `pages/` directory. Add a simple `index.js` file to get started.
