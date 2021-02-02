@@ -36,7 +36,7 @@ export default () => {
 						`}/>
 					</li>
 					<li>Github: <a href="https://www.github.com/vixalien">@vixalien</a></li>
-					<li>Paypal: <a href="https://www.paypal.com">Click here</a></li>
+					<li>Donate: <a href="https://www.paypal.com/donate?hosted_button_id=EL2MFRU4YE3RN">Paypal</a></li>
 				</ul>
 			</main>
 		</Container>
