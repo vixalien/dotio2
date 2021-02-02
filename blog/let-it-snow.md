@@ -4,6 +4,8 @@ description: Building an optimized snowing weather with the Web Animations API a
 created: 1612108162776
 ---
 
+> Easter egg: Run this page with `#snow` at the end
+
 🌨⛄ Do you like snow? Does it snow in your region? Are we in December yet?
 
 We are going to create virtual snow using the chilly _[Web Animations API][animation-mdn]_.
