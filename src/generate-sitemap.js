@@ -11,7 +11,7 @@ let siteMap = `<?xml version="1.0" encoding="UTF-8"?>
    ${allPages.map(page => `
    <sitemap>
 
-      <loc>https://www.vixalien.ga/${page.replace(/^out\//, '')}</loc>
+      <loc>https://www.vixalien.ga/${page.replace(new RegExp('^'+resolve('out\/'), '')}</loc>
 
    </sitemap>
 `).join('\n')}
