@@ -2,7 +2,7 @@ let fs = require('fs');
 let { resolve } = require('path');
 let glob = require('glob');
 
-let allPages = glob(resolve('out/**/*'));
+let allPages = glob.sync(resolve('out/**/*'));
 
 let siteMap = `<?xml version="1.0" encoding="UTF-8"?>
 
@@ -14,7 +14,7 @@ let siteMap = `<?xml version="1.0" encoding="UTF-8"?>
       <loc>https://www.vixalien.ga/${page.replace(/^out\//, '')}</loc>
 
    </sitemap>
-`)}
+`).join('\n')}
 </sitemapindex>`
 
 fs.writeFileSync(resolve('out', 'sitemap.xml'));
