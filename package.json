@@ -8,6 +8,7 @@
     "start": "explosiv start",
     "dev": "explosiv dev",
     "prebuild": "npm run build:js && npm run build:css",
+    "postbuild": "node src/generate-sitemap.js",
     "build:js": "node src/build-js",
     "build:css": "npm run build:css-all && npm run build:css-code",
     "build:css-all": "stylus stylus/app.styl -o public/css/app.css -c",
