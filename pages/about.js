@@ -28,8 +28,8 @@ export default () => {
 						Email: <a id="emailme">Loading</a>
 						<script type='text/javascript' html={`
 							// foil spam bots
-							var email = 'geoangercola';
-							email += '@gmail.com';
+							var email = 'hey';
+							email += '@vixalien.ga';
 							var emailme = document.getElementById('emailme')
 							emailme.href = 'mailto:'+email;
 							emailme.innerHTML = email;
