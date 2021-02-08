@@ -16,7 +16,9 @@ let Document = () => {
 				sizes="180x180"
 				href="/favicon/android-chrome-192x192.png"
 			/>
-			<link rel="alternate" type="application/xml" title="Site Map" href="/sitemap.xml" />
+			<link rel="alternate" type="application/rss+xml" title="RSS Feed for vixalien.ga" href="https://vixalien.ga/feed/feed.rss" />
+			<link rel="alternate" type="application/atom+xml" title="Atom Feed for vixalien.ga" href="https://vixalien.ga/feed/feed.atom" />
+			<link rel="alternate" type="application/json" title="JSON Feed for vixalien.ga" href="https://vixalien.ga/feed/feed.json" />
 		</head>
 		<body>
 			<div class="root"></div>
