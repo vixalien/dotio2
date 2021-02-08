@@ -37,7 +37,7 @@ export default () => {
 					</li>
 					<li>Github repo for this site: <a href="https://www.github.com/vixalien">vixalien/dotio</a></li>
 					<li>Github username: <a href="https://www.github.com/vixalien">@vixalien</a></li>
-					<li>Donate: <a href="https://www.paypal.com/donate?hosted_button_id=EL2MFRU4YE3RN">Paypal</a></li>
+					<li>Donate: <a href="https://www.paypal.com/donate?hosted_button_id=SAAEAPL2GLXZS">Paypal</a></li>
 				</ul>
 				<h2>Feeds</h2>
 				<ul>
