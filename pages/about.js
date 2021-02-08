@@ -25,7 +25,7 @@ export default () => {
 				<h2>Links</h2>
 				<ul>
 					<li>
-						Email: <a id="emailme">Loading</a>
+						Email: <a id="emailme">Loading (requires JavaScript btw, to foil spam bots)</a>
 						<script type='text/javascript' html={`
 							// foil spam bots
 							var email = 'hey';
@@ -38,6 +38,12 @@ export default () => {
 					<li>Github repo for this site: <a href="https://www.github.com/vixalien">vixalien/dotio</a></li>
 					<li>Github username: <a href="https://www.github.com/vixalien">@vixalien</a></li>
 					<li>Donate: <a href="https://www.paypal.com/donate?hosted_button_id=EL2MFRU4YE3RN">Paypal</a></li>
+				</ul>
+				<h2>Feeds</h2>
+				<ul>
+					<li><a href="https://vixalien.ga/feed/feed.rss">RSS</a></li>
+					<li><a href="https://vixalien.ga/feed/feed.atom">Atom</a></li>
+					<li><a href="https://vixalien.ga/feed/feed.json">JSON1</a></li>
 				</ul>
 			</main>
 		</Container>
