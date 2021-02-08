@@ -1,5 +1,6 @@
 let { readFileSync, writeFileSync } = require('fs')
 let { resolve } = require('path')
+let { ensureDirSync } = require('fs-extra')
 let Feed = require('feed').Feed
 let posts = require('./posts')
 
@@ -42,6 +43,8 @@ Object.values(posts).forEach(post => {
     date: new Date(post.created),
   });
 });
+
+ensureDirSync(resolve('out/feed'))
 
 writeFileSync(resolve('out/feed/feed.rss'), feed.rss2())
 // Output: RSS 2.0
