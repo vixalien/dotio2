@@ -11,6 +11,7 @@ let Document = () => {
 			<link rel="stylesheet" href="/css/app.css"/>
 			<meta name="theme-color" content="#0a1826" />
 			<link rel="shortcut icon" href="/favicon.ico"/>
+			<link rel="manifest" href="/manifest.min.json"/>
 			<link
 				rel="apple-touch-icon"
 				sizes="180x180"
