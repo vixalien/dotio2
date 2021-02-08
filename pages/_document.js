@@ -17,7 +17,6 @@ let Document = () => {
 				href="/favicon/android-chrome-192x192.png"
 			/>
 			<link rel="alternate" type="application/xml" title="Site Map" href="/sitemap.xml" />
-			<meta name="google-site-verification" content="uRDat9k1Y-Godwk3sH4OKsSJa1N9Yx8-TaQNuxT5IKo"/>
 		</head>
 		<body>
 			<div class="root"></div>
