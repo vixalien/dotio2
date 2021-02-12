@@ -1,8 +1,14 @@
 ---
-title: Explosiv
+title: How Explosiv Works
 description: "The most lightweight, yet fully featured static-site generator you'll see."
 created: 1611854623290
 ---
+
+Explosiv ([npm][] [Github][]) is a static site generator for JSX content.
+
+> This article is about how Explosiv works, if you want to want to learn how to use Explosiv go to [Explosiv's Github Page][github] instead.
+
+## Why Explosiv was made.
 
 While I was creating this blog, I thought.
 
@@ -139,6 +145,9 @@ Explosiv, is a personal project. It is not a competitor, or even an alternative 
 - Use tabs instead of 4 spaces lol!
 - And other many but subtle changes.
 
+
+[npm]: https://npmjs.com/package/explosiv
+[github]: https://github.com/vixalien/explosiv
 
 [react]: https://reactjs.org
 [stylus]: https://google.com?q=stylus+css
