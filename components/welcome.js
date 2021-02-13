@@ -11,6 +11,9 @@ let Welcome = () => {
 					I am a web developer. This is my site, where you can find my
 					posts and projects. For more info links and feeds, go to <a href="/about">/about</a>
 				</p>
+				<p>
+					You can also view a <a href="/projects">list of my projects</a>
+				</p>
 		</section>
 }
 

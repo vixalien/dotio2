@@ -15,9 +15,10 @@ export default () => {
 			<meta name="description" content="projects by vixalien"/>
 		</Head>
 		<Container>
+			<Header/>
 			<Intro title="Projects"/>
 			<p>
-				Beware of any funniness!
+				This list is non-exhaustive. Other projects can be found on <a href="https://github.com/vixalien" rel="noopener noreferrer">my Github</a>
 			</p>
 			<Projects/>
 		</Container>

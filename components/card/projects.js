@@ -9,10 +9,13 @@ let ProjectsCard = ({ ...props }) => {
 		<p>
 			<h2>Projects</h2>
 			<div className="projects">
-				{projects.map(([slug, { title, description, created }]) => (
+				{projects.map(([slug, { link, title, description, date }]) => (
 					<p>
-						<a href={"/project/" + slug}>{title} &rarr;</a><br/>
-						<span>{new Date(created).toDateString()} - {description}</span>
+						{link ?
+							<a href={link} target="_blank" rel="noopener noreferrer">{title} ({new URL(link).host}) &rarr;</a> :
+							<a href={"/project/" + slug}>{title} &rarr;</a>
+						}<br/>
+						<span>{description}</span>
 					</p>
 				))}
 			</div>
