@@ -4,7 +4,7 @@ description: "The most lightweight, yet fully featured static-site generator you
 created: 1611854623290
 ---
 
-Explosiv ([npm][] [Github][]) is a static site generator for JSX content.
+Explosiv [npm ↗][npm] [Github ↗][github] is a static site generator for JSX content.
 
 > This article is about how Explosiv works, if you want to want to learn how to use Explosiv go to [Explosiv's Github Page][github] instead.
 
