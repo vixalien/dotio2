@@ -1,4 +1,3 @@
-import Explosiv, { Head } from 'explosiv'
 import { promises } from 'fs'
 let { readFile, readdir } = promises
 import { join , resolve } from 'path'

@@ -1,5 +1,3 @@
-import Explosiv from 'explosiv';
-
 import Container from './container';
 
 export default () => {

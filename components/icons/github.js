@@ -1,5 +1,3 @@
-import Explosiv from "explosiv";
-
 const GitHub = () => {
   return (
     <svg

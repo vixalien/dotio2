@@ -1,5 +1,3 @@
-import Explosiv from 'explosiv';
-
 let Container = ({ tag = 'div', className="", tb = null, rl, t, b, ...props }) => {
 	if (tb != null) { t = t || tb; b = b || tb; };
 	let pad = (param, variable) => {

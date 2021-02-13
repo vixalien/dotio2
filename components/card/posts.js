@@ -1,5 +1,3 @@
-import Explosiv from "explosiv";
-
 import postsJSON from "../../src/posts";
 
 let PostsCard = ({ ...props }) => {

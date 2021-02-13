@@ -1,5 +1,3 @@
-import Explosiv from 'explosiv'
-
 let origin = () => {
 	// let origin;
 	// if (process.env.VERCEL) {

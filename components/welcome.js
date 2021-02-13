@@ -1,5 +1,3 @@
-import Explosiv from 'explosiv';
-
 import Intro from './intro';
 import Container from './container';
 

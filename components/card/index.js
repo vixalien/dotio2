@@ -1,4 +1,3 @@
-import Explosiv from 'explosiv';
 import Container from '../container';
 
 let Title = ({ heading, href, link }) => {

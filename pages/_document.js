@@ -1,5 +1,3 @@
-import Explosiv from 'explosiv'
-
 import fs from 'fs'
 import { resolve } from 'path'
 

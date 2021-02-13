@@ -1,5 +1,3 @@
-import Explosiv from "explosiv";
-
 import projectsJSON from "../../src/projects";
 
 let ProjectsCard = ({ ...props }) => {

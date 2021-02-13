@@ -1,5 +1,3 @@
-import Explosiv, { Head } from 'explosiv';
-
 import Canonical from '../components/canonical';
 import Header from '../components/header';
 import Intro from '../components/intro';

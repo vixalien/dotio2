@@ -1,5 +1,3 @@
-import Explosiv from "explosiv";
-
 import External from "./icons/external";
 import Github from "./icons/github";
 import PayPal from "./icons/paypal";

@@ -1,5 +1,3 @@
-import Explosiv from "explosiv";
-
 let External = () => {
 	return <svg className="icon-external" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 		<g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round">
