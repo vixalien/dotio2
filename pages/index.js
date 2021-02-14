@@ -1,3 +1,4 @@
+import CSS from '../components/CSS';
 import Canonical from '../components/canonical';
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -12,6 +13,7 @@ export default () => {
 			<title>vixalien</title>
 			<Canonical path='/'/>
 			<meta name="description" content="homepage of vixalien's site"/>
+			<CSS components={['container', 'intro', 'welcome']}/>
 		</Head>
 		<Container>
 			<Welcome/>

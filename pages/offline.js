@@ -1,3 +1,4 @@
+import CSS from '../components/CSS';
 import Canonical from '../components/canonical';
 import Header from '../components/header';
 import Intro from '../components/intro';
@@ -6,6 +7,7 @@ import Container from '../components/container';
 export default () => {
 	return <>
 		<Head>
+			<CSS components={['container', 'intro', 'header']}/>
 			<title>offline - vixalien</title>
 			<Canonical path='/offline'/>
 			<meta name="description" content="sorry but you are offline"/>

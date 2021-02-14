@@ -1,3 +1,4 @@
+import CSS from '../components/CSS';
 import Canonical from '../components/canonical';
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -7,6 +8,7 @@ import Intro from '../components/intro';
 export default () => {
 	return <>
 		<Head>
+			<CSS components={['container', 'intro', 'header']}/>
 			<title>about - vixalien</title>
 			<Canonical path='/about'/>
 			<meta name="description" content="vixalien is a merry web developer"/>

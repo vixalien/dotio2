@@ -1,3 +1,4 @@
+import CSS from '../../components/CSS';
 import { promises } from 'fs'
 let { readFile, readdir } = promises
 import { join , resolve } from 'path'
@@ -20,10 +21,10 @@ const Projects = ({
 }) => (
 	<>
 		<Head>
+			<CSS code='true' components={['container', 'intro', 'header', 'footer']}/>
 			<title>{title} - vixalien</title>
 			<Canonical path={'/project/'+slug}/>
 			<meta name="description" content={description} />
-			<link rel="stylesheet" href="/css/code.css"/>
 		</Head>
 		<Container tag="main">
 			<Header/>

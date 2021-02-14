@@ -6,7 +6,6 @@ let Document = () => {
 		<head>
 			<meta charset="utf-8"/>
 			<meta name="viewport" content="width=device-width,initial-scale=1"/>
-			<link rel="stylesheet" href="/css/app.css"/>
 			<meta name="theme-color" content="#0a1826" />
 			<link rel="shortcut icon" href="/favicon.ico"/>
 			<link rel="manifest" href="/manifest.min.json"/>
