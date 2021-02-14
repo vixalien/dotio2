@@ -37,7 +37,7 @@ const wait = time => new Promise(res => setTimeout(res, time))
 const asyncIterateForever = fn => {
 	const call = param => fn(param)
 		.then(result => call(param));
-	return call(i);
+	return call();
 }
 
 // Don't run the snow thing for people who do not (prefers-reduced-motion)
