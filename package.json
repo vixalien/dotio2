@@ -10,9 +10,7 @@
     "prebuild": "npm run build:js && npm run build:css",
     "postbuild": "node src/feed.js",
     "build:js": "node src/build-js",
-    "build:css": "npm run build:css-all && npm run build:css-code",
-    "build:css-all": "stylus stylus/app.styl -o public/css/app.css -c",
-    "build:css-code": "stylus stylus/prism.styl -o public/css/code.css -c"
+    "build:css": "stylus stylus/ -o public/css/ -c && stylus stylus/components/ -o public/css/components/ -c",
   },
   "repository": {
     "type": "git",
