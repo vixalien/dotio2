@@ -1,3 +1,4 @@
+import CSS from '../components/CSS';
 import Canonical from '../components/canonical';
 import Header from '../components/header';
 import Intro from '../components/intro';
@@ -6,6 +7,7 @@ import Container from '../components/container';
 export default () => {
 	return <>
 		<Head>
+			<CSS components={['container', 'intro', 'header']}/>
 			<title>date - vixalien</title>
 			<Canonical path='/date'/>
 			<meta name="description" content="sorry but you are offline"/>
@@ -31,29 +33,24 @@ export default () => {
 				This page shows what time is it and seconds after the Unix Epoch according to your device.
 			</p>
 			<p>
-				It uses <code>requestAnimationFrame</code>. Inspect (<kbd>Ctrl+Shift+I</kbd>) to view the source!
+				It uses <code>requestIdleCallback</code>. Inspect (<kbd>Ctrl+Shift+I</kbd>) to view the source!
 			</p>
 		</Container>
 		<script html={`
 			const datestr = document.getElementById('datestr')
 			const datenow = document.getElementById('datenow')
-			let fn = () => {
+			const dateten = document.getElementById('dateten')
+			let main = () => {
 				datestr.innerHTML = new Date().toString();
 				datenow.innerHTML = Date.now()
+				requestIdleCallback(main)
 			}
+			requestIdleCallback(main);
 			let ten = () => {
 				dateten.innerHTML = Date.now()
+				setTimeout(ten, 10000)
 			}
-			fn();
 			ten();
-			watchExec = fn => data => {
-			  fn(data)
-			  execed(data)
-			}
-			let watched = watchExec(fn);
-			let execed = () => requestAnimationFrame(watched, 1000);
-			execed()
-			setTimeout(ten, 10000);
 		`}/>
 	</>
 }
