@@ -23,20 +23,23 @@ export default () => {
 				<h2>Links</h2>
 				<ul>
 					<li>
-						Email: <a id="emailme">Loading (requires JavaScript btw, to foil spam bots)</a>
+						<a id="emailme">Loading (requires JavaScript btw, to foil spam bots)</a>
 						<script type='text/javascript' html={`
 							// foil spam bots
 							var email = 'hey';
 							email += '@vixalien.ga';
 							var emailme = document.getElementById('emailme')
 							emailme.href = 'mailto:'+email;
-							emailme.innerHTML = email;
+							emailme.innerHTML = 'Email';
 						`}/>
 					</li>
-					<li>Informal Resumé: <a href="/Resume.pdf">/Resume.pdf</a></li>
-					<li>Github username: <a href="https://www.github.com/vixalien">@vixalien</a></li>
-					<li>Donate: <a href="https://www.paypal.com/donate?hosted_button_id=SAAEAPL2GLXZS">Paypal</a></li>
+					<li><a href="https://www.github.com/vixalien">Github</a></li>
+					<li><a href="https://www.paypal.com/donate?hosted_button_id=SAAEAPL2GLXZS">Donate at Paypal</a></li>
+					<li><a href="/Resume.pdf">Resume.pdf</a></li>
 				</ul>
+				<p>
+					Hey! It would be nice if you donate because right now my PC screen is cracked hence I'm living on my mobile.
+				</p>
 				<h2>Feeds</h2>
 				<ul>
 					<li><a href="https://vixalien.ga/feed/feed.rss">RSS</a></li>
