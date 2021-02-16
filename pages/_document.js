@@ -14,7 +14,7 @@ let Document = () => {
 			<link rel="alternate" type="application/rss+xml" title="RSS Feed for vixalien.ga" href="https://vixalien.ga/feed/feed.rss" />
 			<link rel="alternate" type="application/atom+xml" title="Atom Feed for vixalien.ga" href="https://vixalien.ga/feed/feed.atom" />
 			<link rel="alternate" type="application/json" title="JSON Feed for vixalien.ga" href="https://vixalien.ga/feed/feed.json" />
-			<script async src="http://www.googletagmanager.com/gtag/js?id=G-YTE49ZSFG1"></script>
+			<script async src="://www.googletagmanager.com/gtag/js?id=G-YTE49ZSFG1"></script>
 			<script html={`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-YTE49ZSFG1');`}/>
 		</head>
 		<body>
