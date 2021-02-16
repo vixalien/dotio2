@@ -88,6 +88,7 @@ let otherSiteRegex = `^((?!${location.host}).)*$`
 let Paths = {
 	// requests to other sites
 	[otherSiteRegex]: NetworkOnly,
+	"googletagmanager": StaleWhileRevalidate,
 	"sw\.js": NetworkOnly,
 	"/favicon*": CacheFirst,
 	"/offline": CacheOnly,
