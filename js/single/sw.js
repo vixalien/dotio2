@@ -1,4 +1,4 @@
-let CACHE = 'vixalien-sw-v2';
+let CACHE = 'vixalien-sw-v2.2';
 
 // utils
 
@@ -13,6 +13,9 @@ function fromCache(request) {
 function toCache(request, response) {
 	return caches.open(CACHE).then(function (cache) {
 		if (response.status < 200 || response.status > 399) return "not stored"
+		// transform text requests into Requests
+		request = new Request(request)
+		request.headers.set('--sw-content-type', response.headers.get('content-type'))
 		return cache.put(request, response.clone()).then(() => response);
 	});
 }
@@ -28,9 +31,9 @@ function update(request) {
 // functions
 
 let Precache = (list) => {
-	return caches.open(CACHE).then(function (cache) {
-		return cache.addAll(list);
-	});
+	return Promise.all(list.map(item => {
+		CacheFirst().onfetch(item)
+	}));
 }
 
 // strategies
@@ -111,8 +114,10 @@ addEventListener('activate', evt =>
 
 addEventListener('install', evt => 
 	evt.waitUntil(Precache([
-		'/offline',
 		'/',
+		'/about',
+		'/offline',
+		'/offline.js',
 	]))
 );
 

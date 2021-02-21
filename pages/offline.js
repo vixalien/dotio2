@@ -19,6 +19,6 @@ export default () => {
 				Sorry, but you are offline, we'll try to reload the page once you are back online
 			</p>
 		</Container>
-		<script html={`ononline = () => location.reload()`}/>
+		<script src="/offline.js"/>
 	</>
 }
