@@ -91,6 +91,8 @@ let otherSiteRegex = `^((?!${location.host}).)*$`
 let Paths = {
 	// requests to other sites
 	[otherSiteRegex]: NetworkOnly,
+	// In the future, why not load stuff from wbn as cache?
+	"wbn$": NetworkOnly,
 	"googletagmanager": StaleWhileRevalidate,
 	"sw\.js": NetworkOnly,
 	"/favicon*": CacheFirst,
