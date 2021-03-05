@@ -11,8 +11,9 @@ let Document = () => {
 			<link rel="alternate" type="application/rss+xml" title="RSS Feed for vixalien.ga" href="https://vixalien.ga/feed/feed.rss" />
 			<link rel="alternate" type="application/atom+xml" title="Atom Feed for vixalien.ga" href="https://vixalien.ga/feed/feed.atom" />
 			<link rel="alternate" type="application/json" title="JSON Feed for vixalien.ga" href="https://vixalien.ga/feed/feed.json" />
-			<script async src="https://www.googletagmanager.com/gtag/js?id=G-YTE49ZSFG1"></script>
-			<script html={`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-YTE49ZSFG1');`}/>
+			<script defer onload="Ganalyse()" src="https://www.googletagmanager.com/gtag/js?id=G-YTE49ZSFG1"></script>
+			<script html={`function Ganalyse() { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-YTE49ZSFG1'); } `}/>
+			<script data-ad-client="ca-pub-3660094674108906" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
 		</head>
 		<body>
 			<div class="root"></div>
