@@ -1,3 +1,4 @@
+import Intro from '../components/intro';
 import Canonical from '../components/canonical';
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -14,6 +15,7 @@ export default () => {
 			<meta name="description" content="homepage of vixalien's site"/>
 		</Head>
 		<Container>
+			<Intro title="vixalien's blog"/>
 			<Welcome/>
 			<Posts/>
 		</Container>

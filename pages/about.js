@@ -28,7 +28,7 @@ export default () => {
 				<ul>
 					<li>
 						<a id="emailme">Loading (requires JavaScript btw, to foil spam bots)</a>
-						<script type='text/javascript' html={`
+						<script html={`
 							// foil spam bots
 							var email = 'hey';
 							email += '@vixalien.ga';

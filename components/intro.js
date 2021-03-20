@@ -1,9 +1,9 @@
 import Container from './container';
 
-let Intro = ({ title, description, created }) => {
-	return <aside className="intro">
+let Intro = ({ title }) => {
+	return <div className="intro">
 			<h1>{title}</h1>
-		</aside>
+		</div>
 }
 
 export default Intro;
