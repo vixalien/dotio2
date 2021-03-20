@@ -10,7 +10,8 @@ let PostsCard = ({ ...props }) => {
 				{posts.map(([slug, { title, description, created }]) => (
 					<p>
 						<a href={"/post/" + slug}>{title} &rarr;</a><br/>
-						<span>{new Date(created).toDateString()} - {description}</span>
+						<small>{new Date(created).toDateString()}</small><br/>
+						<span>{description}</span>
 					</p>
 				))}
 			</div>

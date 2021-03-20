@@ -27,7 +27,7 @@ const Projects = ({
 		</Head>
 		<Container tag="main">
 			<Header/>
-			<Intro title={title} description={description} created={new Date(created).toDateString()}/>
+			<Intro title={title} created={new Date(created).toDateString()}/>
 			<p>{description}</p>
 			<hr/>
 			<br/>
