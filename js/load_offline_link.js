@@ -1,0 +1,1 @@
+if (!navigator.onLine && !location.href.match('offline')) window.loadJS('/show_offline_link.js')

@@ -120,6 +120,7 @@ addEventListener('install', evt =>
 		'/about',
 		'/offline',
 		'/offline.js',
+		'/show_offline_link.js',
 	]))
 );
 
