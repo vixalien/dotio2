@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "explosiv build",
-    "start": "explosiv start",
+    "start": "explosiv serve",
     "dev": "explosiv dev",
     "prebuild": "npm run build:js && npm run build:css",
     "postbuild": "node src/feed.js && node src/wbn.js",
