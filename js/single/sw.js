@@ -1,4 +1,4 @@
-let CACHE = 'vixalien-sw-v2.6';
+let CACHE = 'vixalien-sw-v2.7';
 
 // utils
 
