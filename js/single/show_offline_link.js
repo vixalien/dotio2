@@ -3,12 +3,12 @@ offline.style.padding = 'var(--padding-top) var(--padding-right) var(--padding-b
 offline.className = "container";
 const text = document.createElement('p');
 
-text.appendChild(document.createTextNode('Seems like you are offline. Visit '));
-
 const link = document.createElement('a');
 link.innerHTML = link.href = '/offline';
-text.appendChild(link);
 
+if (!document.querySelector('meta[name="offline"]')) text.appendChild(document.createTextNode('Seems like you are offline. '));
+text.appendChild(document.createTextNode('Visit '));
+text.appendChild(link);
 text.appendChild(document.createTextNode(' to view cached pages offline.'));
 
 offline.appendChild(text);

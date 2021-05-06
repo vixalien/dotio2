@@ -67,6 +67,7 @@ function append() {
 }
 
 onload = function() {
+	if (!location.pathname.match(/^\/offline/)) return
 	return caches
 		.keys()
 		.then(cacheNames => Promise.all(cacheNames.map(cacheName => readCache(cacheName))))

@@ -9,6 +9,7 @@ export default () => {
 			<title>offline - vixalien</title>
 			<Canonical path='/offline'/>
 			<meta name="description" content="sorry but you are offline"/>
+			<meta name="offline"/>
 		</Head>
 		<Container tag="main">
 			<Header/>
