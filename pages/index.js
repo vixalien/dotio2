@@ -12,7 +12,7 @@ export default () => {
 		<Head>
 			<title>vixalien</title>
 			<Canonical path='/'/>
-			<meta name="description" content="homepage of vixalien's site"/>
+			<meta name="description" content="Angelo Verlain (vixalien)"/>
 		</Head>
 		<Container>
 			<Intro title="vixalien's blog"/>
