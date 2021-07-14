@@ -8,7 +8,7 @@ export default () => {
 		<Head>
 			<title>date - vixalien</title>
 			<Canonical path='/date'/>
-			<meta name="description" content="sorry but you are offline"/>
+			<meta name="description" content="date"/>
 		</Head>
 		<Container tag="main">
 			<Header/>
