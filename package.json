@@ -32,7 +32,7 @@
   "homepage": "https://github.com/vixalien/dotio2#readme",
   "dependencies": {
     "esbuild": "^0.8.34",
-    "explosiv": "^2.4.7",
+    "explosiv": "^2.5.1",
     "feed": "^4.2.2",
     "front-matter": "^4.0.2",
     "glob": "^7.1.6",
