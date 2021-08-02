@@ -3,7 +3,7 @@ let { readFile, readdir } = promises
 import { join , resolve } from 'path'
 import matter from 'front-matter'
 import marked from 'marked'
-import prism from 'prismjs'
+import hljs from 'highlight.js'
 
 import Canonical from '../../components/canonical';
 import Header from '../../components/header';
@@ -23,7 +23,8 @@ const Post = ({
 			<title>{title} - vixalien</title>
 			<Canonical path={'/post/'+slug}/>
 			<meta name="description" content={description} />
-			<link rel="stylesheet" href="/css/code.css"/>
+			<link rel="stylesheet" href="/css/highlight-dark.css" media="(prefers-color-scheme: dark)" />
+			<link rel="stylesheet" href="/css/highlight-light.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
 		</Head>
 		<Container tag="main">
 			<Header/>
@@ -50,12 +51,9 @@ export const getProps = async (slug) => {
 
 	marked.setOptions({
 		renderer,
-		highlight: function (code, lang) {
-			if (prism.languages[lang]) {
-				return prism.highlight(code, prism.languages[lang], lang)
-			} else {
-				return code
-			}
+		highlight: function (code, language) {
+			if (!language) return code;
+			return hljs.highlight(code, {language}).value
 		},
 	})
 

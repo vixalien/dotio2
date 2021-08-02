@@ -12,7 +12,7 @@
     "build:js": "node src/build-js",
     "build:css": "npm run build:css-all && npm run build:css-code",
     "build:css-all": "stylus stylus/app.styl -o public/css/app.css -c",
-    "build:css-code": "stylus stylus/prism.styl -o public/css/code.css -c"
+    "build:css-code": "stylus stylus/highlight/highlight-dark.styl stylus/highlight/highlight-light.styl -o public/css -c"
   },
   "repository": {
     "type": "git",
@@ -36,8 +36,8 @@
     "feed": "^4.2.2",
     "front-matter": "^4.0.2",
     "glob": "^7.1.6",
+    "highlight.js": "^11.1.0",
     "marked": "^2.0.1",
-    "prismjs": "^1.23.0",
     "stylus": "^0.54.8",
     "wbn": "0.0.5"
   },
