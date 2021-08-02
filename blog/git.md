@@ -4,9 +4,9 @@ description: Learn to use Git, a popular Distributed Control System to effective
 created: 1627818169271
 ---
 
-So now you understand a certain programming language and you are writing code and coffee is your new best friend. But everywhere there is code, you see **Git**. They say a true developer must know Git and here you are, knowing nothing about Git, but longing to getting started.
+So now you understand a certain programming language and coffee is your new best friend. But everywhere there is code, you see **Git**. They say a true developer must know Git and here you are, knowing nothing about Git, but longing to getting started.
 
-I have to admit, Git is as complex as it is popular. However, you don't need to know the whole 160+ commands of Git to use it well. Here is a short but sure tutorial that will teach you the most used feature of this world-famous version control system.
+I have to admit, Git is as complex as it is popular. However, you don't need to know all the 160+ commands of Git to do daily operations. Here is a short but comprehensive tutorial that will teach you the most used features of this world-famous version control system.
 
 ## What is a Version Control?
 
@@ -88,7 +88,7 @@ By Initializing a Git repository, you convert an unversioned project to Git or a
 git init
 ```
 
-After initializing your git repository, you should see a message like: `Initialized empty Git repository in C:/project/.git/` to confirm that a new repo has been created successfully.
+After initializing your git repository, you should see a message like: "Initialized empty Git repository in C:/project/.git/" to confirm that a new repo has been created successfully. Note that Git create a hidden folder called `.git` to store version and history data.
 
 ### Tracking files
 
