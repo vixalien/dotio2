@@ -117,7 +117,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-> **Note:** On some older versions of Git, the `main` branch may be called `master` by default, this is normal. To change the name of the master branch to main, run: `git branch -M main`
+> **Note:** On some older versions of Git, the `main` branch may be called `master` by default, this is normal. To change the name of the master branch to main, run: `git checkout master` then `git branch -M main`
 
 #### Staging files
 
