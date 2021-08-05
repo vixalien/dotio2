@@ -45,16 +45,20 @@ export default () => {
 					Hey! It would be nice if you donate because right now my PC screen is cracked hence I'm living on my mobile.
 				</p>
 				<h2>Experiments</h2>
+				<h3>Web bundle</h3>
+				<p>
+					A Web Bundle is a file format for encapsulating one or more HTTP resources in a single file. 
+					It can include one or more HTML files, JavaScript files, images, or stylesheets. 
+					Web Bundles, more formally known as Bundled HTTP Exchanges, are part of the Web Packaging proposal.
+					This is a web bundle of this site, last built at {new Date().toGMTString()}
+				</p>
 				<ul>
 					<li><a href="/vixalien.wbn">Download Web Bundle (vixalien.wbn)</a></li>
 				</ul>
 				<p>
-					This site was last built at {new Date().toGMTString()}
-				</p>
-				<p>
 					Note that to use the web bundle you may need to enable some flags or config in your browser.
-					For Chrome go to <ExternalLink href="chrome://flags" text="chrome://flags"/> and enable <b>Web Bundles</b>.
-					For Edge do the same thing at <ExternalLink href="edge://flags" text="edge://flags"/>. Firefox does not support web bundles AFAIK.
+					For Chrome go to <b>chrome://flags</b> and enable <b>Web Bundles</b>.
+					For Edge do the same thing at <b>edge://flags</b>. Firefox does not support web bundles AFAIK.
 				</p>
 				<h2>Feeds</h2>
 				<ul>
