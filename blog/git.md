@@ -24,7 +24,7 @@ Git was created by Linus Torvalds in 2005 for development of the Linux kernel, w
 
 > **Note: You'll need to be able to work with the command line fluently before learning Git.** Even though there are Git GUIs, Git itself is a command line application. If you don't understand the arts of the command line yet, you can check [Tania's command line tutorial](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/).
 
-You can download Git for macOS, Windows, Linux or from source from the [Official Git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+You can download Git for macOS, Windows, Linux or build it from source from the [Official Git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 When you are finished installing, you can check if git is installed by running the following code in your Terminal (or Command Prompt for windows).
 
