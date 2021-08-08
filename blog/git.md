@@ -8,7 +8,7 @@ So now you understand a certain programming language and coffee is your new best
 
 I have to admit, Git is as complex as it is popular. However, you don't need to know all the 160+ commands of Git to do daily operations. Here is a short but comprehensive tutorial that will teach you the most used features of this world-famous version control system.
 
-## What is a Version Control?
+## What is a Version Control System?
 
 A Version Control System (VCS) is a system that track and manages changes to files. A project with a VCS is usually called a __repository__ or __repo__ for short.
 
