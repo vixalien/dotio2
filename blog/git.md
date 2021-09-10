@@ -8,7 +8,7 @@ So now you understand a certain programming language and coffee is your new best
 
 I have to admit, Git is as complex as it is popular. However, you don't need to know all the 160+ commands of Git to do daily operations. Here is a short but comprehensive tutorial that will teach you the most used features of this world-famous version control system.
 
-## What is a Version Control?
+## What is a Version Control System?
 
 A Version Control System (VCS) is a system that track and manages changes to files. A project with a VCS is usually called a __repository__ or __repo__ for short.
 
@@ -24,7 +24,7 @@ Git was created by Linus Torvalds in 2005 for development of the Linux kernel, w
 
 > **Note: You'll need to be able to work with the command line fluently before learning Git.** Even though there are Git GUIs, Git itself is a command line application. If you don't understand the arts of the command line yet, you can check [Tania's command line tutorial](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/).
 
-You can download Git for macOS, Windows, Linux or from source from the [Official Git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+You can download Git for macOS, Windows, Linux or build it from source from the [Official Git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 When you are finished installing, you can check if git is installed by running the following code in your Terminal (or Command Prompt for windows).
 
