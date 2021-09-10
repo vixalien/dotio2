@@ -41,9 +41,6 @@ export default () => {
 					<li><ExternalLink href="https://www.paypal.com/donate?hosted_button_id=SAAEAPL2GLXZS" text="Donate at Paypal"/></li>
 					<li><a href="/Resume.pdf">Resume.pdf</a></li>
 				</ul>
-				<p>
-					Hey! It would be nice if you donate because right now my PC screen is cracked hence I'm living on my mobile.
-				</p>
 				<h2>Experiments</h2>
 				<h3>Web bundle</h3>
 				<p>
