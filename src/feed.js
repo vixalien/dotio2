@@ -7,22 +7,22 @@ let posts = require('./posts')
 const feed = new Feed({
   title: "vixalien.io",
   description: "Feed for my personal website!",
-  id: "http://vixalien.ga/",
-  link: "http://vixalien.ga/",
+  id: "http://vixalien.com/",
+  link: "http://vixalien.com/",
   language: "en",
-  image: "http://vixalien.ga/favicon/maskable.png",
-  favicon: "http://vixalien.ga/favicon.ico",
+  image: "http://vixalien.com/favicon/maskable.png",
+  favicon: "http://vixalien.com/favicon.ico",
   copyright: "All rights reserved, 2021 - Angelo Verlain",
   generator: "awesome", // optional, default = 'Feed for Node.js'
   feedLinks: {
-    json: "https://vixalien.ga/feed/feed.json",
-    atom: "https://vixalien.ga/feed/feed.atom",
-    rss: "https://vixalien.ga/feed/feed.rss"
+    json: "https://vixalien.com/feed/feed.json",
+    atom: "https://vixalien.com/feed/feed.atom",
+    rss: "https://vixalien.com/feed/feed.rss"
   },
   author: {
     name: "Angelo Verlain",
-    email: "hey@vixalien.ga",
-    link: "https://vixalien.ga"
+    email: "hey@vixalien.com",
+    link: "https://vixalien.com"
   }
 });
 
@@ -30,14 +30,14 @@ Object.values(posts).forEach(post => {
   feed.addItem({
     title: post.title,
     id: post.slug,
-    link: "https://vixalien.ga/post/" + post.slug,
+    link: "https://vixalien.com/post/" + post.slug,
     description: post.description,
     content: readFileSync(resolve('out/post', post.slug, 'index.html'), 'utf8'),
     author: [
       {
         name: "Angelo Verlain",
-        email: "hey@vixalien.ga",
-        link: "https://vixalien.ga"
+        email: "hey@vixalien.com",
+        link: "https://vixalien.com"
       }
     ],
     date: new Date(post.created),
