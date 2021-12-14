@@ -59,9 +59,9 @@ export default () => {
 				</p>
 				<h2>Feeds</h2>
 				<ul>
-					<li><a href="https://vixalien.ga/feed/feed.rss">RSS</a></li>
-					<li><a href="https://vixalien.ga/feed/feed.atom">Atom</a></li>
-					<li><a href="https://vixalien.ga/feed/feed.json">JSON1</a></li>
+					<li><a href="/feed/feed.rss">RSS</a></li>
+					<li><a href="/feed/feed.atom">Atom</a></li>
+					<li><a href="/feed/feed.json">JSON1</a></li>
 				</ul>
 			</main>
 		</Container>
