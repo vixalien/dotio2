@@ -21,8 +21,40 @@ window.onload = function () {
 	updateLinks()
 
 	window.onpopstate = function (state) {
-    updateDom(window.location.pathname);
-  };
+		updateDom(window.location.pathname);
+	};
+}
+
+let toEval = [];
+
+function updateSelectedNodes(data, selector) {
+	const get = (node, what) => {
+		// Evaluate new scripts
+		if (what === 1 && node.tagName == "SCRIPT" && (node.type === "" || node.type === "text/javascript")) {
+			if (node.hasAttribute("src")) toEval.push(fetch(node.getAttribute("src")).then(res => res.text()).catch(() => ""));
+			else toEval.push(node.innerText);
+		}
+		// Just returning the provided node back
+		console.log(node, what);
+		return node;
+	}
+
+	const parent = document.querySelector(selector);
+	const currentNodes = document.querySelector(selector).childNodes;
+	const dataNodes = new DOMParser()
+		.parseFromString(data, "text/html")
+		.querySelector(selector).childNodes;
+
+	console.log("currentNodes", currentNodes);
+	console.log("dataNodes", dataNodes);
+
+	udomdiff(
+		parent, // where changes happen
+		[...currentNodes], // Array of current items/nodes
+		[...dataNodes], // Array of future items/nodes (returned)
+		get // a callback to retrieve the node
+	);
+
 }
 
 async function updateDom(path) {
@@ -36,24 +68,22 @@ async function updateDom(path) {
 	try {
 		const res = await fetch(path)
 		const data = await res.text()
-		
-		const get = (o) => o; // Just returning the provided node back
 
-	  const parent = document.querySelector("html");
-	  const currentNodes = document.querySelector("html").childNodes;
-	  const dataNodes = new DOMParser()
-	    .parseFromString(data, "text/html")
-	    .querySelector("html").childNodes;
+		// update head first
+		updateSelectedNodes(data, "head");
+		// then update body
+		updateSelectedNodes(data, "body");
 
-	  udomdiff(
-	    parent, // where changes happen
-	    [...currentNodes], // Array of current items/nodes
-	    [...dataNodes], // Array of future items/nodes (returned)
-	    get // a callback to retrieve the node
-	  );
-
+		// scroll to the top
+		document.documentElement.scroll(0,0);
+		// update links
 		updateLinks()
-		// window.scrollTo(scrollLeft, scrollTop)
+		// evaluate new scripts
+		Promise.all(toEval)
+			.then(scripts => scripts.map(script => {
+				return Function('"use strict";'+script)()
+			}))
+			.then(() => dispatchEvent(new Event('load')));
 	} finally {
 		document.querySelector("html").removeAttribute("data-loading")
 	}
