@@ -12,8 +12,7 @@ let Document = () => {
 			<link rel="alternate" type="application/rss+xml" title="RSS" href="https://vixalien.ga/feed/feed.rss" />
 			<link rel="alternate" type="application/atom+xml" title="Atom" href="https://vixalien.ga/feed/feed.atom" />
 			<link rel="alternate" type="application/json" title="JSON" href="https://vixalien.ga/feed/feed.json" />
-			<script defer data-domain="vixalien.ga" src="https://plausible.io/js/plausible.js"/>
-			<script data-ad-client="ca-pub-3660094674108906" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<script defer data-domain="vixalien.com" src="https://plausible.io/js/plausible.js"></script>
 		</head>
 		<body>
 			<div class="root"></div>
