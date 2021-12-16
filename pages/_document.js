@@ -15,6 +15,16 @@ let Document = () => {
 			<script defer data-domain="vixalien.com" src="https://plausible.io/js/plausible.js"></script>
 		</head>
 		<body>
+			<script html={`
+				if (window.cookieStore) {
+					cookieStore.get("theme")
+						.then(theme => {
+							if (!theme) return;
+							let value = ["light","dark","auto"].includes(theme.value) ? theme.value : "auto";
+							document.body.classList.add("theme-" + value);
+						})
+				}
+			`}/>
 			<div class="root"></div>
 			<script src="/bundle.js" defer="defer"/>
 		</body>
