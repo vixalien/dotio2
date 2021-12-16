@@ -12,7 +12,7 @@
     "build:js": "node src/build-js",
     "build:css": "npm run build:css-all && npm run build:css-code",
     "build:css-all": "stylus stylus/app.styl -o public/css/app.css -c",
-    "build:css-code": "stylus stylus/highlight/highlight-dark.styl stylus/highlight/highlight-light.styl -o public/css -c"
+    "build:css-code": "stylus stylus/highlight/highlight.styl -o public/css -c"
   },
   "repository": {
     "type": "git",

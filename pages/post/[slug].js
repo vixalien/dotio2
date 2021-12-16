@@ -23,8 +23,7 @@ const Post = ({
 			<title>{title} - vixalien</title>
 			<Canonical path={'/post/'+slug}/>
 			<meta name="description" content={description} />
-			<link rel="stylesheet" href="/css/highlight-dark.css" media="(prefers-color-scheme: dark)" />
-			<link rel="stylesheet" href="/css/highlight-light.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
+			<link rel="stylesheet" href="/css/highlight.css" />
 		</Head>
 		<Container tag="main">
 			<Header/>
