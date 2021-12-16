@@ -8,8 +8,11 @@ require('dotenv').config();
 const primaryURL = process.env.URL;
 const bundleSRC = 'out/vixalien.wbn'
 
-const builder = (new wbn.BundleBuilder(primaryURL))
-  .setManifestURL(primaryURL + '/manifest.json')
+const builder = (new wbn.BundleBuilder('b2'))
+	.setPrimaryURL(primaryURL)
+//  .setManifestURL(primaryURL + '/manifest.json');
+
+const now = new Date().toUTCString();
 
 glob.sync('out/**/*')
 	.forEach(src => {
@@ -26,7 +29,7 @@ glob.sync('out/**/*')
 			{
 				'Content-Type': mime.getType(src) || '',
 				'Content-Length': body.length.toString(),
-				'Date': new Date().toUTCString()
+				'Date': now
 			},
 			body
 		)

@@ -31,15 +31,16 @@
   },
   "homepage": "https://github.com/vixalien/dotio2#readme",
   "dependencies": {
-    "esbuild": "^0.8.34",
+    "dotenv": "^10.0.0",
+    "esbuild": "^0.14.5",
     "explosiv": "^2.5.1",
     "feed": "^4.2.2",
     "front-matter": "^4.0.2",
     "glob": "^7.1.6",
     "highlight.js": "^11.1.0",
-    "marked": "^2.0.1",
-    "stylus": "^0.54.8",
-    "wbn": "0.0.5"
+    "marked": "^4.0.7",
+    "stylus": "^0.55.0",
+    "wbn": "0.0.6"
   },
   "devDependencies": {}
 }
