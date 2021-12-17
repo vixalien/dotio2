@@ -7,12 +7,13 @@
     "build": "explosiv build",
     "start": "explosiv serve",
     "dev": "explosiv dev",
-    "prebuild": "npm run build:js && npm run build:css",
+    "prebuild": "yarn build:js && yarn build:css",
     "postbuild": "node src/feed.js && node src/wbn.js",
     "build:js": "node src/build-js",
-    "build:css": "npm run build:css-all && npm run build:css-code",
-    "build:css-all": "stylus stylus/app.styl -o public/css/app.css -c",
-    "build:css-code": "stylus stylus/highlight/highlight.styl -o public/css -c"
+    "build:css": "yarn build:css-app && yarn build:css-code && yarn build:css-ads",
+    "build:css-app": "stylus stylus/app.styl -o public/css -c",
+    "build:css-code": "stylus stylus/highlight/highlight.styl -o public/css -c",
+    "build:css-ads": "stylus stylus/carbonads/carbonads.styl -o public/css -c"
   },
   "repository": {
     "type": "git",
