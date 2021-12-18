@@ -19,7 +19,10 @@ let Document = () => {
 				if (window.cookieStore) {
 					cookieStore.get("theme")
 						.then(theme => {
-							if (!theme) return;
+							if (!theme) {
+								cookieStore.set("theme", "auto");
+								theme = { value: "auto" };
+							}
 							let value = ["light","dark","auto"].includes(theme.value) ? theme.value : "auto";
 							document.body.classList.add("theme-" + value);
 						})
