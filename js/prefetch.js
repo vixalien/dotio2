@@ -25,9 +25,19 @@ let observer = new IntersectionObserver(entries => {
 // observe when Idle
 requestIdleCallback(() => 
 	Array.from(document.querySelectorAll('a:not([prefetch="false"])'))
-		.forEach(link => 
+		.forEach(link => {
+			// filter out invalid and not http or https urls
+			let url;
+			try {
+				let urlobj = new URL(link.href);
+				if (urlobj.protocol != "http:" && urlobj.protocol != "https:") {
+					throw "";
+				}
+			} catch {
+				return;
+			}
 			requestIdleCallback(() => observer.observe(link))
-		)	
+		})
 )
 
 let xhrPrefetch = url => {
