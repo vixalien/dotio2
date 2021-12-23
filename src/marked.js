@@ -1,3 +1,4 @@
+import hljs from 'highlight.js'
 import { marked } from 'marked'
 
 marked.use({
@@ -18,4 +19,4 @@ marked.setOptions({
 	},
 })
 
-export default { marked };
+export { marked }

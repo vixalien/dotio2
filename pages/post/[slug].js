@@ -3,7 +3,6 @@ let { readFile, readdir } = promises
 import { join , resolve } from 'path'
 import matter from 'front-matter'
 import { marked } from '../../src/marked'
-import hljs from 'highlight.js'
 
 import Canonical from '../../components/canonical';
 import Header from '../../components/header';
