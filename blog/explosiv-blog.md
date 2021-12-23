@@ -4,15 +4,15 @@ description: "Building a static lightweight and fast blog with Explosiv."
 created: 1639915508100
 ---
 
-Earlier this year, I created [Explosiv ↗][explosiv], a static site generator that uses JSX. Explosiv is quite lightweight and barebones if I can say and that nature of it allows it to be used wherever you want. In this case we'll be creating a static blog with Explosiv.
+Earlier this year, I created [Explosiv ↗][explosiv], a lightweight & fast static site generator that allows pages to be built with JSX. This is a tutorial on how to build a functional blog with Explosiv.
 
 # Terminology
 
-We'll first talk about the blog we'll build to set some idea about the blog we'll be building. You can directly [jump to the programming part](#code).
+We'll first talk about how the blog will be built. You can directly [jump to the programming part](#code) or directly view [the source code of the final blog on Github][explosiv-blog-source].
 
 ## What's in *this blog*?
 
-The blog will be a simple one with room for improvement (I invite you to be creative.) It will simply render a homepage, an about page and a group of posts. That's it. We'll not be using any heavy styling or custom components library. It will be a pretty simple blog, and I invite you to customize it to your liking. Of course we'll use **Explosiv** to build the blog and we'll write the blog posts themselves in **Markdown**.
+The blog will be a simple one with room for improvement (I invite you to be creative.) It will simply render a homepage, an about page and a group of posts. That's it. We'll not be using any heavy styling or custom components library. Of course we'll use **Explosiv** to build the blog and we'll write the blog posts themselves in **Markdown**.
 
 ## Explosiv?
 
@@ -20,7 +20,7 @@ The blog will be a simple one with room for improvement (I invite you to be crea
 
 ## JSX?
 
-[JSX ↗][jsx] stands for **XHTML in JSX** and is famously used within React. In fact, if you come from React, Explosiv will be easy for you to understand because it use that same JSX. Here is an example of JSX for you to understand it more.
+[JSX ↗][jsx] stands for **XHTML in JSX** and it allows you to write HTML inside JS files simplifying data binding. JSX was created by the React team and is famously used within React so if you come from React, Explosiv will be easy for you to understand because it uses that same loved JSX syntax. Here is an example of JSX syntax.
 
 ```jsx
 // JSX syntax is coool!
@@ -50,7 +50,7 @@ As you can see in the above screenshot from https://www.joshwcomeau.com/blog/how
 
 ## Markdown?
 
-Markdown is a lightweight language that will convert plain text to formatted text. It's the language we'll use to write our own blog posts. It is used by bloggers, software developers and documentation writers. All those `README.md` files on GitHub are Markdown! You can [learn more about Markdown here][markdown]. Below is a demo of Markdown:
+[Markdown][markdown] is a lightweight language that will convert plain text to formatted text. It's the language we'll use to write our own blog posts. It is used by bloggers, software developers and documentation writers. All those `README.md` files on GitHub are Markdown!. You can view the simple syntax of Markdown here:
 
 ```md
 # This is a heading
@@ -91,7 +91,7 @@ Now go ahead and create a folder called `pages` at the root of your project. Thi
 
 ### Homepage
 
-Create a file called `index.js` for our homepage. `index` is a special name as it denotes that this file will be the first one that the user sees when they visit our site for the first time. Add some simple JSX to our index page to show a warn welcome message to visitors of the blog.
+Create a file called `index.js` for our homepage. `index` is a special name as it denotes that this file will be the first one that the user sees when they visit our site for the first time. Add some simple JSX to our index page to show a warm welcome message to visitors of the blog.
 
 ```jsx
 // index.js
@@ -119,7 +119,7 @@ We can now see how our site will look in the browser. Switch to your shell and r
 npx explosiv dev
 ```
 
-This will build the app and serve it at http://localhost:3000 in development mode. Visit the url to view your page.
+This will start Explosiv in Development Mode, build the app then serve it locally at http://localhost:3000. Visit the URL to view the homepage.
 
 ![Blog homepage][blog-homepage]
 
@@ -151,7 +151,7 @@ Now go to http://localhost:3000/about to view the about page. Note that Explosiv
 
 ## 3. Styling
 
-Now the page looks a little bit ugly doesn't it? We can add CSS styles to make our site look nicer. We'll create a folder called `public/` and create a stylesheet at `public/app.css`. 
+Now the page looks a little bit ugly doesn't it? We can add CSS styles to make our site look nicer. We'll create a folder called `public/` and create a stylesheet at `public/app.css`. Files in the `public/` folder will be publicly accessible so you can visit http://localhost:3000/app.css to view the stylesheet.
 
 ```css
 /* public/app.css */
@@ -430,6 +430,7 @@ Now that you are done, here are a list of things you should do next.
 [vixalien-date]: https://vixalien.com/date
 [vercel]: https://vercel.com
 [dotio2]: https://github.com/vixalien/dotio2
+[explosiv-blog-source]: https://github.com/vixalien/explosiv-blog
 
 [nextjs-waterfall]: /images/posts/explosiv-blog/nextjs-waterfall.png
 [blog-homepage]: /images/posts/explosiv-blog/blog-homepage.png
