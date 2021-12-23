@@ -12,3 +12,6 @@
 # build assets
 /public/*.js
 /public/css
+
+# sublime text files
+*.sublime-*
