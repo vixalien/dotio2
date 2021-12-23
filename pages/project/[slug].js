@@ -2,7 +2,7 @@ import { promises } from 'fs'
 let { readFile, readdir } = promises
 import { join , resolve } from 'path'
 import matter from 'front-matter'
-import { marked } from 'marked'
+import { marked } from '../../src/marked'
 import hljs from 'highlight.js'
 
 import Canonical from '../../components/canonical';
@@ -46,16 +46,6 @@ export const getPaths = async () => {
 export const getProps = async (slug) => {
 	let projects = await readFile(join('./projects', `${slug}.md`), 'utf-8')
 	projects = matter(projects)
-
-	const renderer = new marked.Renderer()
-
-	marked.setOptions({
-		renderer,
-		highlight: function (code, language) {
-			if (!language) return code;
-			return hljs.highlight(code, {language}).value
-		},
-	})
 
 	projects.slug = slug
 	projects.content = marked(projects.body)
