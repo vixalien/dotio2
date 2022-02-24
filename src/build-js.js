@@ -12,13 +12,13 @@ let single = glob.sync('js/single/**/*.js')
 let Build = async () => {
 	await esbuild.build({
 		entryPoints: single,
-		outdir: 'public',
-		minify: false
+		outdir: 'public/js',
+		minify: true
 	});
 	await esbuild.transform(js, {
-			minify: false
+			minify: true
 		})
-		.then(({code}) => fs.writeFileSync(resolve('public', 'bundle.js'), code))
+		.then(({code}) => fs.writeFileSync(resolve('public/js', 'bundle.js'), code))
 }
 
 Build()

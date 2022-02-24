@@ -10,7 +10,7 @@
 /node_modules/
 
 # build assets
-/public/*.js
+/public/js
 /public/css
 
 # sublime text files

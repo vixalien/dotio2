@@ -27,7 +27,7 @@ let Document = () => {
 				}
 			`}/>
 			<div class="root"></div>
-			<script src="/bundle.js" defer="defer"/>
+			<script src="/js/bundle.js" defer="defer"/>
 		</body>
 	</html>)
 }
