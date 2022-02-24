@@ -15,45 +15,21 @@ export default () => {
 			<Intro
 				title="Date & Time now"
 			/>
+			<ul>
+				<li><b>Local DateTime:</b> <span id="datetime"/> <button id="datetime-button">Copy</button></li>
+				<li><b>Milliseconds after Unix Epoch:</b> <span id="ms"/> <button id="ms-button">Copy</button></li>
+			</ul>
+			<h3>Meta</h3>
+			<ul>
+				<li><b>This site was last built at:</b> <span id="build">{Date.now()}</span></li>
+			</ul>
 			<p>
-				<span id="datestr"></span>
+				This page shows what time is it and milliseconds after the Unix Epoch <b>according to your device</b>.
 			</p>
 			<p>
-				<span id="datenow"></span>
-			</p>
-			<p>
-				(updated after 10 seconds): <span id="dateten"></span>
-			</p>
-			<p>
-				The Time this page was last built: <span id="datebuilt">{Date.now()}</span>
-			</p>
-			<p>
-				This page shows what time is it and seconds after the Unix Epoch according to your device.
-			</p>
-			<p>
-				It uses <code>requestAnimationFrame</code>. Inspect (<kbd>Ctrl+Shift+I</kbd>) to view the source!
+				It uses <code>requestAnimationFrame</code> to update elements.
 			</p>
 		</Container>
-		<script html={`
-			const datestr = document.getElementById('datestr')
-			const datenow = document.getElementById('datenow')
-			let fn = () => {
-				datestr.innerHTML = new Date().toString();
-				datenow.innerHTML = Date.now()
-			}
-			let ten = () => {
-				dateten.innerHTML = Date.now()
-			}
-			fn();
-			ten();
-			watchExec = fn => data => {
-			  fn(data)
-			  execed(data)
-			}
-			let watched = watchExec(fn);
-			let execed = () => requestAnimationFrame(watched, 1000);
-			execed()
-			setTimeout(ten, 10000);
-		`}/>
+		<script src="/js/date.js" defer="defer"/>
 	</>
 }
