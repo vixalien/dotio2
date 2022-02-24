@@ -78,22 +78,21 @@ export default () => {
 		<script html={`
 			let themeExperiment = document.getElementById("theme-experiment");
 			let themeInput = document.getElementById("theme-input")
-			if (window.cookieStore) {
+			if (window.localStorage) {
 				themeExperiment.style.display = "block";
-				cookieStore.get("theme")
-					.then(theme => {
-						if (!theme) return;
-						let value = ["light","dark","auto"].includes(theme.value) ? theme.value : "auto";
-						themeInput.value = value;
-					})
+				let theme =localStorage.getItem("theme")
+				if (theme) {
+					let value = ["light","dark","auto"].includes(theme) ? theme : "auto";
+					themeInput.value = value;	
+				};
+				themeInput.addEventListener("change", function(event) {
+					let theme = event.target.value;
+					let currTheme = Array.from(document.body.classList).reduce((curr,e) => curr ? curr : e.startsWith("theme-") ? e : null, null);
+					if (currTheme) document.body.classList.remove(currTheme);
+					document.body.classList.add("theme-" + theme);
+					localStorage.setItem("theme", theme);
+				});
 			}
-			themeInput.addEventListener("change", function(event) {
-				let theme = event.target.value;
-				let currTheme = Array.from(document.body.classList).reduce((curr,e) => curr ? curr : e.startsWith("theme-") ? e : null, null);
-				if (currTheme) document.body.classList.remove(currTheme);
-				document.body.classList.add("theme-" + theme);
-				cookieStore.set("theme", theme);
-			})
 		`}/>
 	</>
 }

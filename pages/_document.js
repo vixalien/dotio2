@@ -16,16 +16,14 @@ let Document = () => {
 		</head>
 		<body>
 			<script html={`
-				if (window.cookieStore) {
-					cookieStore.get("theme")
-						.then(theme => {
-							if (!theme) {
-								cookieStore.set("theme", "auto");
-								theme = { value: "auto" };
-							}
-							let value = ["light","dark","auto"].includes(theme.value) ? theme.value : "auto";
-							document.body.classList.add("theme-" + value);
-						})
+				if (window.localStorage) {
+					let theme = localStorage.getItem("theme");
+					if (!theme) {
+						localStorage.setItem("theme", "auto");
+						theme = "auto";
+					}
+					let value = ["light","dark","auto"].includes(theme) ? theme : "auto";
+					document.body.classList.add("theme-" + value);
 				}
 			`}/>
 			<div class="root"></div>
