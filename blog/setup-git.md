@@ -215,7 +215,7 @@ some other action (type on the keyboard, move the mouse, utilize the
 disks) during the prime generation; this gives the random number
 generator a better chance to gain enough entropy.
 gpg: key <i><b><code>YOUR KEY WILL BE HERE</code></b></i> marked as ultimately trusted
-dgpg: revocation certificate stored as '/home/<i>USERNAME</i>/.gnupg/openpgp-revocs.d/RANDOM40CHARACTERSIDKWHYUREADINGTHISLMAO.rev'
+dgpg: revocation certificate stored as '/home/<i>USERNAME</i><wbr>/.gnupg/openpgp-revocs.d/RANDOM40CHARACTERSIDKWHYUREADINGTHISLMAO.rev'
 public and secret key created and signed.
 
 pub   rsa4096 2022-03-31 [SC] [expires: 2022-06-29]
