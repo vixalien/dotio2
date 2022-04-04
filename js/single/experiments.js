@@ -2,10 +2,6 @@ const experimentsDiv = document.getElementById("experiments");
 
 const experiments = [
 	{
-		key: "theme",
-		input: document.getElementById("theme-input"),
-	},
-	{
 		key: "overflow",
 		input: document.getElementById("overflow-input"),
 	}

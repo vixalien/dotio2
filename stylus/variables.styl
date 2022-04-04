@@ -10,7 +10,6 @@
 	--box-shadow 0 0 0px 3px #bac7d4
 
 /* Colors */
-
 body
 	--secondary #666
 	--fg #333
@@ -18,15 +17,7 @@ body
 	--heading-fg #000
 	--link #0169ec
 	color-scheme: light;
-	&.theme-auto
-		@media (prefers-color-scheme dark)
-			--secondary #8e8e8e
-			--fg #a0a0a0
-			--bg #030f1b
-			--heading-fg #fff
-			--link #5a99ff
-			color-scheme: dark;
-	&.theme-dark
+	@media (prefers-color-scheme dark)
 		--secondary #8e8e8e
 		--fg #a0a0a0
 		--bg #030f1b

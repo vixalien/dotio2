@@ -49,14 +49,7 @@ export default () => {
 					<div>
 						<h3>Theme</h3>
 						<p>
-							Change the website's theme
-						</p>
-						<p>
-							<select id="theme-input">
-								<option value="auto">Automatic</option>
-								<option value="light">Light</option>
-								<option value="dark">Dark</option>
-							</select>
+							The theme experiment is no longer available. To view this site in dark theme, change your operating system settings and the site will adapt accordingly.
 						</p>
 						<h3>Code & Image Overflow</h3>
 						<p>

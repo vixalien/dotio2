@@ -126,7 +126,7 @@ pre:not(.not-code) code {
 	/* purposely ignored */
 }
 
-dark-style()
+@media (prefers-color-scheme dark)
 	pre:not(.not-code) code {
 		color: #adbac7;
 		background: #14253b;
@@ -241,10 +241,3 @@ dark-style()
 	.hljs-tag {
 		/* purposely ignored */
 	}
-
-body
-	&.theme-dark
-		dark-style yes
-	&.theme-auto
-		@media (prefers-color-scheme dark)
-			dark-style yes

@@ -1,12 +1,4 @@
 const config = {
-	theme: {
-		values: [
-			"light",
-			"dark",
-			"auto"
-		],
-		default: "auto",
-	},
 	overflow: {
 		values: [
 			"yes",

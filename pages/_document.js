@@ -12,8 +12,9 @@ let Document = () => {
 			<link rel="alternate" type="application/rss+xml" title="RSS" href="https://vixalien.ga/feed/feed.rss" />
 			<link rel="alternate" type="application/atom+xml" title="Atom" href="https://vixalien.ga/feed/feed.atom" />
 			<link rel="alternate" type="application/json" title="JSON" href="https://vixalien.ga/feed/feed.json" />
-			<script src="/js/config.js" defer="defer"/>
 			<script defer data-domain="vixalien.com" src="https://plausible.io/js/plausible.js"></script>
+			{/* this script does not defer cause it would look janky */}
+			<script src="/js/config.js"/>
 		</head>
 		<body>
 			<div class="root"></div>
