@@ -44,8 +44,20 @@ hr
 	border 0
 	border-top 1px solid var(--secondary)
 
+/* links */
 a
 	color var(--link)
 	text-decoration none
 	border-bottom 1px solid
-/* links */
+
+// code & image overflow theme
+.overflow-yes
+	.block-code, pre.not-code, .block-image
+		display: block;
+		margin: 30px 0;
+		margin-left: 0px;
+		width: fit-content;
+		margin-left: 50%;
+		transform: translateX(-50%);
+		min-width: 100%;
+		max-width: calc(100vw - calc(var(--padding-right) + var(--padding-left)));

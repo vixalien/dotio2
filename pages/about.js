@@ -44,19 +44,31 @@ export default () => {
 					<li><ExternalLink href="https://www.github.com/vixalien" text="Github"/></li>
 					<li><a href="/Resume.pdf">Resume.pdf</a></li>
 				</ul>
-				<h2>Experiments</h2>
-				<div id="theme-experiment" style={{display:"none"}}>
-					<h3>Theme</h3>
-					<p>
-						Change the website's theme
-					</p>
-					<p>
-						<select id="theme-input">
-							<option value="auto">Automatic</option>
-							<option value="light">Light</option>
-							<option value="dark">Dark</option>
-						</select>
-					</p>
+				<div id="experiments" style={{display:"none"}}>
+					<h2>Experiments</h2>
+					<div>
+						<h3>Theme</h3>
+						<p>
+							Change the website's theme
+						</p>
+						<p>
+							<select id="theme-input">
+								<option value="auto">Automatic</option>
+								<option value="light">Light</option>
+								<option value="dark">Dark</option>
+							</select>
+						</p>
+						<h3>Code & Image Overflow</h3>
+						<p>
+							If enabled, code and images will take as much horizontal space as they require. That means their width may be larger than the overall width of the other text. To view this experiment in effect, visit any blog post.
+						</p>
+						<p>
+							<select id="overflow-input">
+								<option value="yes">Enabled</option>
+								<option value="no">Disabled</option>
+							</select>
+						</p>
+					</div>
 				</div>
 				<h3>Web bundle</h3>
 				<p>
@@ -75,24 +87,6 @@ export default () => {
 				</ul>
 			</main>
 		</Container>
-		<script html={`
-			let themeExperiment = document.getElementById("theme-experiment");
-			let themeInput = document.getElementById("theme-input")
-			if (window.localStorage) {
-				themeExperiment.style.display = "block";
-				let theme =localStorage.getItem("theme")
-				if (theme) {
-					let value = ["light","dark","auto"].includes(theme) ? theme : "auto";
-					themeInput.value = value;	
-				};
-				themeInput.addEventListener("change", function(event) {
-					let theme = event.target.value;
-					let currTheme = Array.from(document.body.classList).reduce((curr,e) => curr ? curr : e.startsWith("theme-") ? e : null, null);
-					if (currTheme) document.body.classList.remove(currTheme);
-					document.body.classList.add("theme-" + theme);
-					localStorage.setItem("theme", theme);
-				});
-			}
-		`}/>
+		<script src="/js/experiments.js" defer="defer"/>
 	</>
 }
