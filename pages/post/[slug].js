@@ -29,7 +29,6 @@ const Post = ({
 			<Header/>
 			<Intro title={title} created={new Date(created).toDateString()}/>
 			<p>{description}</p>
-			<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CESIE2JN&placement=wwwvixaliencom" id="_carbonads_js"></script>
 			<hr/>
 			<br/>
 			<article html={content}/>
