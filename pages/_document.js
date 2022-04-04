@@ -13,10 +13,10 @@ let Document = () => {
 			<link rel="alternate" type="application/atom+xml" title="Atom" href="https://vixalien.ga/feed/feed.atom" />
 			<link rel="alternate" type="application/json" title="JSON" href="https://vixalien.ga/feed/feed.json" />
 			<script defer data-domain="vixalien.com" src="https://plausible.io/js/plausible.js"></script>
-			{/* this script does not defer cause it would look janky */}
-			<script src="/js/config.js"/>
 		</head>
 		<body>
+			{/* this script does not defer cause it would look janky */}
+			<script src="/js/config.js"/>
 			<div class="root"></div>
 			<script src="/js/bundle.js" defer="defer"/>
 		</body>
