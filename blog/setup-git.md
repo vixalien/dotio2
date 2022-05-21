@@ -22,49 +22,45 @@ sudo dnf install git # fedora
 # this guide is not really meant for windows but everything should work, go to https://git-scm.com/download/win to download git for windows
 ```
 
-### 2. Enable colors & set default editor
+### 2. Update Git settings
 
-```sh
-git config --global color.ui true
-git config --global core.editor subl
-```
+Create a file called `.gitconfig` in your home directory. On Windows, it is `C:\Users\username\.gitconfig`.
 
-Note: please change `subl` to whatever editor you use.
-
-### 3. Tell Git who you are
-
-```sh
-git config --global user.name "Beatiful name"
-git config --global user.email "good@email.dne"
-```
-
-### 4. Useful log aliases
-
-Allow you to view pretty outputs when you fo `git log`. To enable these aliases, add the following lines to your `~/.gitconfig` file (create one if it doesn't exist)
 
 ```yaml
 # ~/.gitconfig
+# Tell Git who you are
+[user]
+	email = good@email.dne
+	name = Beatiful Name
+# It is a good idea to tell Git to remember your credentials so that you don't have to log in everytime especially if you use Personal Access Tokens as seen below.
+# Note: If you don't want Git to remember your credentials forever, use `cache` instead of `store` or run `git help -a | grep credential-` to view all available helpers.
+[credential]
+	helper = store
+# Allow you to view pretty outputs when you fo `git log`. To enable these aliases, add the following lines to your `~/.gitconfig` file (create one if it doesn't exist)
 # some are stolen from https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
 [alias]
-lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-lg = !"git lg1"
-adog = log --all --decorate --oneline --graph
-# silly amend the last commit using the same message, useful when you forgot to add something before committing.
-silly = commit --amend -a --no-edit
+	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	lg = !"git lg1"
+	adog = log --all --decorate --oneline --graph
+	# silly amend the last commit using the same message, useful when you forgot to add something before committing.
+	silly = commit --amend -a --no-edit
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+# Set the default branch to main
+[init]
+	defaultBranch = main
+[color]
+	ui = true
+# Set editor to VS Code
+[core]
+      editor = code
+
 ```
-
-Then run `git adog` or `git lg`.
-
-#### 5. Tell Git to remember your credentials
-
-It is a good idea to tell Git to remember your credentials so that you don't have to log in everytime especially if you use Personal Access Tokens as seen below.
-
-```sh
-git config --global credential.helper store
-```
-
-> Note: If you don't want Git to remember your credentials forever, use `cache` instead of `store` or run `git help -a | grep credential-` to view all available helpers.
 
 ## Github
 
