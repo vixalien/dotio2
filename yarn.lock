@@ -580,10 +580,10 @@ expand-template@^2.0.3:
   resolved "https://registry.yarnpkg.com/expand-template/-/expand-template-2.0.3.tgz#6e14b3fcee0f3a6340ecb57d2e8918692052a47c"
   integrity sha512-XYfuKMvj4O35f/pOXLObndIRvyQ+/+6AhODh+OKWj9S9498pHHn/IMszH+gt0fBCRWMNfk1ZSp5x3AifmnI2vg==
 
-explosiv@^2.5.1:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/explosiv/-/explosiv-2.6.2.tgz#40f20c267ebc51924d2686f9c327a08c3db36a94"
-  integrity sha512-adgzjfQv8bBRO8Y9ikzX+Q7gF+NaDQPcnQLdwp/K3HmX96JaQSKrILPLbkw5TC4G/rZyaivfeuDMVcwkXP/R/w==
+explosiv@^2.6.5:
+  version "2.6.5"
+  resolved "https://registry.yarnpkg.com/explosiv/-/explosiv-2.6.5.tgz#1427593cb8fd66ee94085c251832a6f374aee46f"
+  integrity sha512-CvIIx1JmW2GWc2FBE0RNEeIyG7heVZltRgYgHVHj4HMkxvXeMaCh0GMVaddFZalT/QUpM1OSUyecCJnig2BSFQ==
   dependencies:
     chokidar "^3.5.2"
     compression "^1.7.4"

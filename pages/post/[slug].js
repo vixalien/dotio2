@@ -22,7 +22,7 @@ const ImageContainer = ({ top, bottom, image }) => (
 				<source srcset={resolveWidth(image, 600)} media="(max-width: 600px)" />
 				<source srcset={resolveWidth(image, 1200)} media="(min-width: 600px) and (max-width: 1200px)" />
 				<source srcset={resolveWidth(image, 3000)} media="(min-width: 1200px)" />
-				<img src={image} />
+				<img src={resolveWidth(image, 1200)} />
 			</picture>
 			<div className="bottom">
 				{bottom}
