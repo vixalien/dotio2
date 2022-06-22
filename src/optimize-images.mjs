@@ -41,7 +41,7 @@ const sizes = [
 ];
 
 console.log("Optimizing images...");
-await Promise.all(files.map(file => {
+Promise.all(files.map(file => {
   const image = sharp(dir(`./public/images/${file}`));
   return Promise.all(sizes.map(size => {
     const out = dir(`./public/.build/images/${size}/${stripExtension(file)}.webp`);
