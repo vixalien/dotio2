@@ -22,7 +22,8 @@ export default () => {
 				<p>
 					Hi! I'm Shema Angelo Verlain, or vixalien. I'm a web developer and student from Kigali, Rwanda.
 					I love to build random things that solve real world problems or just for fun.
-					I write code in JavaScript, HTML, CSS and use frameworks like React, NextJS and Explosiv.
+					I write code in JavaScript, HTML, CSS and use frameworks like React, NextJS and Explosiv. I also got a
+					thing for TypeScript and Deno. I'm also learning to develop Linux apps (using GTK) in Vala.
 				</p>
 				<p>
 					This is a website where I will try to write posts about Web Development, Life and other experiences when I get free time from school.
@@ -65,7 +66,7 @@ export default () => {
 				</div>
 				<h3>Web bundle</h3>
 				<p>
-					A Web Bundle is an experimental file format for encapsulating one or more HTTP resources in a single file. 
+					A Web Bundle is an experimental file format for encapsulating one or more HTTP resources in a single file.
 					This is a web bundle of this site, last built at around {new Date().toGMTString()}.
 					Note that to use the web bundle you may need to enable some flags or config in your browser.
 				</p>
