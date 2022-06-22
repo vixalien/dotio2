@@ -1,0 +1,78 @@
+.image-container {
+  --background-color: rgba(0, 0, 0, 0.33);
+  --text: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &.invert {
+    --background-color: rgba(255, 255, 255, 0.13);
+    --text: #000;
+  }
+
+  @media screen and (max-width: 600px) {
+    .stack .read-link {
+      display: none;
+    }
+
+    img {
+      margin-top: 50px;
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .stack hr {
+      display: none;
+    }
+
+    & {
+      position: relative;
+      height: 100vh;
+    }
+
+    .inner-container {
+      padding-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -2;
+      height: 100vh;
+      width: 100vw;
+      object-fit: cover;
+      margin: 0;
+    }
+
+    .top > header > nav > a {
+      color: var(--text);
+      font-size: xx-large;
+      font-weight: 900;
+      border-bottom-width: 3px;
+      box-shadow: 0 0 100px 100px var(--background-color);
+      background-color: var(--background-color);
+    }
+
+    .bottom {
+      color: var(--text);
+      box-shadow: 0 0 100px 100px var(--background-color);
+      background-color: var(--background-color);
+      font-weight: bold;
+    }
+
+    .read-link {
+      color: inherit;
+      border-bottom-width: 2px;
+    }
+
+    h1 {
+      color: inherit
+    }
+  }
+}

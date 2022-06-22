@@ -1,20 +1,22 @@
+function isSet(value) {
+	return !(value === undefined || value === null);
+}
+
 let Container = ({ tag = 'div', className="", tb = null, rl, t, b, ...props }) => {
-	if (tb != null) { t = t || tb; b = b || tb; };
-	let pad = (param, variable) => {
-		if (param) {
-			if (parseInt(param)) {
-				return parseInt(param) + 'px';
-			} else {
-				return '0';
-			}
-		} else {
-			return 'var(--padding-' + variable + ')';
-		}
+
+	// construct a custom padding if any of the `rl`, `t` or `b` parameters are set.
+	let style = {};
+	if (isSet(rl)) {
+		style.paddingRight = rl;
+		style.paddingLeft = rl;
 	}
-	let Tag = ({ children, ...props }) => Explosiv.el(tag, props, children)
-	
+	if (isSet(t)) style.paddingTop = t;
+	if (isSet(b)) style.paddingBottom = b;
+
+	let Tag = ({ children, ...props }) => Explosiv.el(tag, props, children);
+
 	return <Tag
-		style={{padding: ` ${pad(t, 'top')} ${pad(rl, 'right')} ${pad(b, 'bottom')} ${pad(rl, 'left')}`}}
+		style={style}
 		className={className + " container"}
 		{...props}/>
 }

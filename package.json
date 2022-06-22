@@ -10,10 +10,10 @@
     "prebuild": "yarn build:js && yarn build:css",
     "postbuild": "node src/feed.js && node src/wbn.js",
     "build:js": "node src/build-js",
-    "build:css": "yarn build:css-app && yarn build:css-code && yarn build:css-ads",
+    "build:css": "yarn build:css-app && yarn build:css-code && yarn build:css-image-container",
     "build:css-app": "stylus stylus/app.styl -o public/css -c",
     "build:css-code": "stylus stylus/highlight/highlight.styl -o public/css -c",
-    "build:css-ads": "stylus stylus/carbonads/carbonads.styl -o public/css -c"
+    "build:css-image-container": "stylus stylus/image-container.styl -o public/css -c"
   },
   "repository": {
     "type": "git",
@@ -40,8 +40,11 @@
     "glob": "^7.1.6",
     "highlight.js": "^11.1.0",
     "marked": "^4.0.7",
+    "sharp": "^0.30.6",
     "stylus": "^0.55.0",
     "wbn": "0.0.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/sharp": "^0.30.4"
+  }
 }

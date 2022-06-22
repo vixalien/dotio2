@@ -2,6 +2,7 @@
 title: Setup Git
 description: How I set up Git on my systems with using opinionated defaults.
 created: 1648770432886
+banner: true
 ---
 
 # How to setup Git

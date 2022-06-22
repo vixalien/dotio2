@@ -5,6 +5,7 @@
 /_static/
 /out/
 /__explosiv__/
+/public/.build/
 
 # packages
 /node_modules/
