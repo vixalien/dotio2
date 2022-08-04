@@ -24,4 +24,5 @@ blog({
     { title: "Twitter", url: "https://twitter.com/angeloverlain2" },
   ],
   style,
+  canonicalUrl: Deno.env.get("URL"),
 });
