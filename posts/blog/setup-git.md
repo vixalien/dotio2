@@ -1,7 +1,7 @@
 ---
 title: Setup Git
 description: How I set up Git on my systems with using opinionated defaults.
-created: 1648770432886
+publish_date: 2022-04-01
 banner: true
 ---
 
@@ -13,7 +13,7 @@ This is my default setup
 
 Git has a high chance of being already installed on some systems. First run `git version` to see if it is installed and up-to-date.
 
-```sh
+```bash
 brew install git # on macos
 
 yay -S git # arch (or use pacman)
@@ -79,7 +79,7 @@ SSH is a protocol for logging into a remote machine and for executing commands o
 
 FIrst check if you have the files `~/.ssh/id_rsa` and `~/.ssh/id_rsa.pub`.
 
-```sh
+```bash
 ls ~/.ssh/id_rsa{,.pub}
 ```
 
@@ -93,7 +93,7 @@ ssh-keygen -t rsa -C "good@email.dne"
 
 ##### 3. Copy the contents of the `id_rsa.pub`
 
-```sh
+```bash
 pbcopy < ~/.ssh/id_rsa.pub # on macOS
 
 cat ~/.ssh/id_rsa.pub # on *nix, copy by hand-erm-mouse
@@ -112,7 +112,7 @@ You will now need to add your SSH key to Github.
 
 To test SSH, run the following command:
 
-```sh
+```bash
 ssh -T git@github.com
 ```
 
@@ -127,7 +127,7 @@ Also, don't mind it if you see a message that says the authenticity of 'github.c
 
 Now clone a repo using SSH by running your clone commands in the form:
 
-```sh
+```bash
 git clone git@github.com:user/repo.git
 ```
 
@@ -153,7 +153,7 @@ You can show a `Verified` Badge or a blue tick next to your commits by setting u
 
 #### 1. Install gpg
 
-```sh
+```bash
 brew install gpg # on macos
 # it's usually preinstalled on linux
 # on windows go to https://www.gnupg.org/download/
@@ -161,7 +161,7 @@ brew install gpg # on macos
 
 #### 2. Generate a new GPG Key
 
-```sh
+```bash
 gpg --full-generate-key
 ```
 
@@ -225,7 +225,7 @@ At this point you will be demanded to enter a password twice. Please remember it
 
 #### 3. Verify the GPG key
 
-```sh
+```bash
 gpg --list-secret-keys --keyid-format LONG
 ```
 
@@ -242,7 +242,7 @@ ssb   rsa4096/795E8F10B7A9C97D 2022-03-31 [E] [expires: 2022-06-29]
 
 Run the following command using the `[KEY_ID]` from the previous command to export your newly-created GPG key.
 
-```sh
+```bash
 gpg --armor --export [KEY_ID]
 ```
 
@@ -269,7 +269,7 @@ To add the key to Github.
 
 Now that you have GPG set up with Git, run the following commands to tell git to always sign your commits with your GPG key.
 
-```sh
+```bash
 git config --global user.signingkey [KEY_ID]
 git config --global commit.gpgsign true
 ```
@@ -282,13 +282,13 @@ Now try and commit to one of your projects. And it should show a verified commit
 
 If you run into issues while on the last part and the response says the commit can't be verified, try running the following command.
 
-```sh
+```bash
 echo "test" | gpg --clearsign
 ```
 
 If it fails, set the GPG_TTY variable.
 
-```sh
+```bash
 export GPG_TTY=$(tty)
 ```
 
@@ -296,7 +296,7 @@ Then try re-running the command and it should be successful.
 
 It is also a good idea to kill the GPG client so that it asks for the password the first time.
 
-```sh
+```bash
 gpgconf --kill all
 gpg-agent --daemon
 ```

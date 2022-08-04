@@ -1,7 +1,7 @@
 ---
 title: How Explosiv Works
 description: "The most lightweight, yet fully featured static-site generator you'll see."
-created: 1611854623290
+publish_date: 2021-01-28
 ---
 
 Explosiv [npm ↗][npm] [Github ↗][github] is a static site generator for JSX content.
@@ -115,9 +115,9 @@ The transpiled file will look like this
 let { createElement } = require('explosiv')
 
 export default () => (
-	createElement('main', null, 
+	createElement('main', null,
 		createElement('h1', null, 'Hello there!'),
-		createElement('p', null, 
+		createElement('p', null,
 			'This is a super simple example of generating static files using Explosiv.',
 			'You can learn more', ' ',
 			createElement('a', {

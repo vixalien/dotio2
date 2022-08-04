@@ -1,7 +1,7 @@
 ---
 title: Let it snow!
 description: Building an optimized snowing weather with the Web Animations API and Promises.
-created: 1612108162776
+publish_date: 2021-01-31
 ---
 
 > Easter egg: Run this page with `#snow` at the end

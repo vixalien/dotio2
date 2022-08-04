@@ -1,7 +1,7 @@
 ---
 title: Learn Git!
 description: Learn to use Git, a popular Distributed Control System to effectively collaborate and manage your software projects.
-created: 1627818169271
+publish_date: 2021-08-01
 ---
 
 So now you understand a certain programming language and coffee is your new best friend. But everywhere there is code, you see **Git**. They say a true developer must know Git and here you are, knowing nothing about Git, but longing to getting started.
@@ -28,7 +28,7 @@ You can download Git for macOS, Windows, Linux or build it from source from the 
 
 When you are finished installing, you can check if git is installed by running the following code in your Terminal (or Command Prompt for windows).
 
-```sh
+```bash
 git --version
 ```
 
@@ -42,7 +42,7 @@ git version 2.30.2.windows.1
 
 After you install Git, you will have to set some configurations. These include your name and email and are used to mark changes that you introduce in a repository. That way, people can see changes you made and contact you easi;y.
 
-```sh
+```bash
 git config --global user.name "Firstname Lastname"
 git config --global user.email username@email.com
 ```
@@ -51,7 +51,7 @@ The above commands tell Git your names and email. Remember to change `Firstname 
 
 You can type the following command to check the saved config:
 
-```sh
+```bash
 git config --list
 ```
 
@@ -84,7 +84,7 @@ In this tutorial, we will need a new blank directory to learn Git and follow alo
 
 By Initializing a Git repository, you convert an unversioned project to Git or as in our case, create a new empty repository. (Yep, you can now call your project a repository!) You will need to run the rest of the commands in the root of the project. You can type `cd` to see where you are now and check if it is indeed where you are planning to create a new repository.
 
-```sh
+```bash
 git init
 ```
 
@@ -98,7 +98,7 @@ You will now need to create two files at the root of your project folder: `index
 
 You can check the status of your local repository by using the `git status` command. You will use this command a lot while working with Git repositories.
 
-```sh
+```bash
 git status
 ```
 
@@ -123,7 +123,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 The output above tells us that Git knows there are new files in the Working Directory but they are not tracked (They are not part of our Git repo; Git is not tracking changes to them, yet). We have to **stage** the files using the git `add` command.
 
-```sh
+```bash
 git add .
 ```
 
@@ -154,7 +154,7 @@ Changes to be committed:
 We are now ready to commit the files (i.e. mark the changes we made a version).
 
 
-```sh
+```bash
 git commit -m "Initial Commit"
 ```
 
@@ -169,7 +169,7 @@ Output:
 
 While committing, the option `-m` can be used to provide a commit message, in this case "Initial Commit". You are encouraged to always provide a descriptive commit message that show a gist of the changes you've made.
 
-> If you don't provide a commit message, Git will use the default editor, set in the installation process on Windows or otherwise Vim, which could be weird for users who don't know to use Vim because it shows a strange screen where you can no longer enter any commands. To quit Vim, press <kbd>ESC</kbd> and type `:q!` followed by <kbd>ENTER</kbd>. You can [learn how to configure Git to use your favorite text editor](https://docs.github.com/en/get-started/getting-started-with-git/associating-text-editors-with-git). 
+> If you don't provide a commit message, Git will use the default editor, set in the installation process on Windows or otherwise Vim, which could be weird for users who don't know to use Vim because it shows a strange screen where you can no longer enter any commands. To quit Vim, press <kbd>ESC</kbd> and type `:q!` followed by <kbd>ENTER</kbd>. You can [learn how to configure Git to use your favorite text editor](https://docs.github.com/en/get-started/getting-started-with-git/associating-text-editors-with-git).
 
 ### Branches
 
@@ -180,7 +180,7 @@ Branches are used to develop features isolated from each other. The `main` branc
 In this project, we will be creating a new branch to add javascript.
 You use the `git chekout -b <branch-name>` syntax to add a new branch.
 
-```sh
+```bash
 git checkout -b javascript
 ```
 
@@ -192,7 +192,7 @@ Switched to a new branch 'javascript'
 
 You can use the `git branch` command to list all branches in the current repository.
 
-```sh
+```bash
 git branch
 ```
 
@@ -206,7 +206,7 @@ The current branch is highlighted in green and an `asterisk` is shown before it'
 
 We can starting working on code in our new branch. Create a file called `script.js`. We can the use `git status` to view the state of our repo.
 
-```sh
+```bash
 git status
 ```
 
@@ -220,16 +220,16 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 ```
 
-Notice that the output shows that we're on branch `javascript` and that `script.js` is untracked. We will need to add it to the 
+Notice that the output shows that we're on branch `javascript` and that `script.js` is untracked. We will need to add it to the
 Index.
 
-```sh
+```bash
 git add .
 ```
 
 Then commit.
 
-```sh
+```bash
 git commit -m "Add script"
 ```
 
@@ -246,7 +246,7 @@ When you are done implementing a feature in a branch, the only thing left is to 
 
 We'll need to go back to the main branch first.
 
-```sh
+```bash
 git checkout main
 ```
 
@@ -256,7 +256,7 @@ It is good practise to first review changes before merging or committing. You ca
 
 If you provide only one argument, Git shows the changes in your working tree relative to the named reference. You can use HEAD to compare it to the latest commit, or a branch name to compare it to the tip of a different branch, which is what we'll do here.
 
-```sh
+```bash
 git diff javascript
 ```
 
@@ -274,7 +274,7 @@ index 0000000..d7ac302
 
 After now reviewing the changes we are about to merge, it's time we merge the actual changes back into the main branch.
 
-```sh
+```bash
 git merge javascript
 ```
 
@@ -289,7 +289,7 @@ Fast-forward
 
 After the branch is merged successfully, we can now delete the `javascript` branch because it is no longer needed.
 
-```sh
+```bash
 git branch -d javascript
 ```
 
@@ -333,7 +333,7 @@ These are just a few of the possible parameters you can use. For more, see `git 
 
 When you are done and ready to mark a version of your code, you can add a git tag.
 
-```sh
+```bash
 git tag v1.0.0
 ```
 

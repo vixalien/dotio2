@@ -1,0 +1,28 @@
+html {
+	--secondary: #666;
+	--fg: #333;
+	--bg: #fff;
+	--heading-fg: #000;
+	--link: #0169ec;
+}
+
+html.dark {
+  --secondary: #8e8e8e;
+		--fg: #a0a0a0;
+		--bg: #030f1b;
+		--heading-fg: #fff;
+		--link: #5a99ff;
+}
+
+body {
+  color-scheme: light;
+  background-color: var(--bg);
+}
+
+html.dark body {
+  color-scheme: dark;
+}
+
+ol, ul, menu {
+  list-style: initial;
+}

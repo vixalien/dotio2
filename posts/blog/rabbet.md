@@ -1,7 +1,7 @@
 ---
 title: How Rabbet Works
 description: "A lightweight site that allow you to build pages from  links."
-created: 1639767430259
+publish_date: 2021-12-17
 ---
 
 **Rabbet** is a very small and minimal app that allows users to create pages on the Internet with a set of URLs.
@@ -25,7 +25,7 @@ Rabbet is built as a monorepo. That is, it is one repository (folder) but it con
 
 ## Render
 
-`render` was one of the hardest packages to create. The hardest part is that it has different templates so that a user can choose a template they choose. 
+`render` was one of the hardest packages to create. The hardest part is that it has different templates so that a user can choose a template they choose.
 
 ### Templates
 
@@ -170,7 +170,7 @@ This is the dashboard that appears to all visitors of the service. It allows use
 
 The package has the following directory structure:
 
-<div style="white-space: break-spaces; font-family: monospace;">
+<pre style="white-space: break-spaces; font-family: monospace;">
 
   **dash**
   ├─ **components**: Components used throughout the app.
@@ -186,7 +186,7 @@ The package has the following directory structure:
   ├─ **stores**: Zustand stores for different objects like user, pages etc.
   ├─ **stylus**: Stylus for the site that will be transcribed into CSS
 
-</div>
+</pre>
 
 ---
 <br/>
