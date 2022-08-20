@@ -432,8 +432,8 @@ Now that you are done, here are a list of things you should do next.
 [dotio2]: https://github.com/vixalien/dotio2
 [explosiv-blog-source]: https://github.com/vixalien/explosiv-blog
 
-[nextjs-waterfall]: /images/posts/explosiv-blog/nextjs-waterfall.png
-[blog-homepage]: /images/posts/explosiv-blog/blog-homepage.png
-[styled-blog-homepage]: /images/posts/explosiv-blog/styled-blog-homepage.png
-[blog-homepage-with-posts]: /images/posts/explosiv-blog/blog-homepage-with-posts.png
-[blog-post]: /images/posts/explosiv-blog/blog-post.png
+[nextjs-waterfall]: /images/posts/explosiv-blog/nextjs-waterfall.webp
+[blog-homepage]: /images/posts/explosiv-blog/blog-homepage.webp
+[styled-blog-homepage]: /images/posts/explosiv-blog/styled-blog-homepage.webp
+[blog-homepage-with-posts]: /images/posts/explosiv-blog/blog-homepage-with-posts.webp
+[blog-post]: /images/posts/explosiv-blog/blog-post.webp
