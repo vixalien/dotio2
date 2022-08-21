@@ -5,7 +5,7 @@ publish_date: 2022-04-01
 og:image: /images/posts/setup-git/banner.webp
 ---
 
-# How to setup Git
+## How to setup Git
 
 This is my default setup
 

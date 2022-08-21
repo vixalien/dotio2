@@ -2,6 +2,7 @@
 	"name": "vixalien",
 	"short_name": "vixalien's blog",
 	"start_url": "/",
+	"id": "/",
 	"icons": [
 		{
 			"src": "/favicon/android-chrome-192x192.webp",
