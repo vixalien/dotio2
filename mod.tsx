@@ -5,7 +5,7 @@ import blog, {
   highlight,
   imageContainer,
   redirects,
-} from "https://deno.land/x/vixalien_deno_blog@0.4.10/blog.tsx";
+} from "https://deno.land/x/vixalien_deno_blog@0.4.11/blog.tsx";
 
 blog({
   author: "Angelo Verlain",
@@ -24,10 +24,14 @@ blog({
   description:
     `Hello! I'm Angelo Verlain, but you can call me vixalien. I am a web \
     developer. This is my website, a collection of projects and writings.`,
-  middlewares: [await highlight(), await imageContainer(), redirects({
-    "/feed/feed.rss": "/feed",
-    "/blog": "/"
-  })],
+  middlewares: [
+    await highlight(),
+    await imageContainer(),
+    redirects({
+      "/feed/feed.rss": "/feed",
+      "/blog": "/",
+    }),
+  ],
   headLinks: [
     {
       rel: "apple-touch-icon",
