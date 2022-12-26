@@ -5,7 +5,7 @@ import blog, {
   highlight,
   imageContainer,
   redirects,
-} from "https://deno.land/x/vixalien_deno_blog@0.4.13/blog.tsx";
+} from "https://deno.land/x/vixalien_deno_blog@0.4.14/blog.tsx";
 
 blog({
   author: "Angelo Verlain",
