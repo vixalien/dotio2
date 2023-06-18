@@ -4,6 +4,7 @@ description: Me and my family went to visit Burundi. Here's my impressions.
 publish_date: 2023-06-18
 og:image: /images/posts/burundi/flags.webp
 tags: travel
+invert: true
 ---
 
 So yea, all is in the title.
