@@ -294,20 +294,13 @@
     "https://deno.land/x/vixalien_deno_blog@0.4.16/markedMiddleware/imageContainer.ts": "3c3f2f606158398bfba974d30beb9d161cf047fc9dc2355c5522d00eab5fafc1",
     "https://deno.land/x/vixalien_deno_blog@0.4.16/markedMiddleware/util.ts": "cfe57349567c266899860c16babb141962b559ca6beeaa52031492c1978bf6ed",
     "https://deno.land/x/vixalien_deno_blog@0.4.16/types.d.ts": "620998989ccc90da221a8326a67bc06a1feaf86bceea7c6b1db5316affada41e",
-    "https://deno.land/x/vixalien_deno_blog@0.4.17/blog.tsx": "99919c452d69daa2fee5829774df0696bacc26bd188c192c5c8c8adf3bcb251e",
-    "https://deno.land/x/vixalien_deno_blog@0.4.17/components.tsx": "250bffdf9f6eddace4e937ee5fd74b395bddf84271fdf42e493bf1236e3401b6",
-    "https://deno.land/x/vixalien_deno_blog@0.4.17/deps.ts": "a74863cabe214f23ef99c01ba042935bce7d0f6dfc7019332925f73481c05893",
-    "https://deno.land/x/vixalien_deno_blog@0.4.17/markedMiddleware/highlight.ts": "8c4b9b4c01009a02fe370c1b4f8a4683c49624f7b697af4b22bae8680340243f",
-    "https://deno.land/x/vixalien_deno_blog@0.4.17/markedMiddleware/imageContainer.ts": "3c3f2f606158398bfba974d30beb9d161cf047fc9dc2355c5522d00eab5fafc1",
-    "https://deno.land/x/vixalien_deno_blog@0.4.17/markedMiddleware/util.ts": "cfe57349567c266899860c16babb141962b559ca6beeaa52031492c1978bf6ed",
-    "https://deno.land/x/vixalien_deno_blog@0.4.17/types.d.ts": "8359bba5182fd1efd0ee4048f462012a7aa6c2aa184c13795625a2122f0a6b2c",
-    "https://deno.land/x/vixalien_deno_blog@0.4.18/blog.tsx": "99919c452d69daa2fee5829774df0696bacc26bd188c192c5c8c8adf3bcb251e",
-    "https://deno.land/x/vixalien_deno_blog@0.4.18/components.tsx": "250bffdf9f6eddace4e937ee5fd74b395bddf84271fdf42e493bf1236e3401b6",
-    "https://deno.land/x/vixalien_deno_blog@0.4.18/deps.ts": "7a7bdd0d4e11cd744708e0f4166abf9dd5f28c7b40f84b1a161d96bbea63c41e",
-    "https://deno.land/x/vixalien_deno_blog@0.4.18/markedMiddleware/highlight.ts": "8c4b9b4c01009a02fe370c1b4f8a4683c49624f7b697af4b22bae8680340243f",
-    "https://deno.land/x/vixalien_deno_blog@0.4.18/markedMiddleware/imageContainer.ts": "3c3f2f606158398bfba974d30beb9d161cf047fc9dc2355c5522d00eab5fafc1",
-    "https://deno.land/x/vixalien_deno_blog@0.4.18/markedMiddleware/util.ts": "bf27b78646683c5e8217d53dd8b56263ab24f5d034946d0095ccdb401c457d95",
-    "https://deno.land/x/vixalien_deno_blog@0.4.18/types.d.ts": "8359bba5182fd1efd0ee4048f462012a7aa6c2aa184c13795625a2122f0a6b2c",
+    "https://deno.land/x/vixalien_deno_blog@0.4.20/blog.tsx": "99919c452d69daa2fee5829774df0696bacc26bd188c192c5c8c8adf3bcb251e",
+    "https://deno.land/x/vixalien_deno_blog@0.4.20/components.tsx": "250bffdf9f6eddace4e937ee5fd74b395bddf84271fdf42e493bf1236e3401b6",
+    "https://deno.land/x/vixalien_deno_blog@0.4.20/deps.ts": "7a7bdd0d4e11cd744708e0f4166abf9dd5f28c7b40f84b1a161d96bbea63c41e",
+    "https://deno.land/x/vixalien_deno_blog@0.4.20/markedMiddleware/highlight.ts": "8c4b9b4c01009a02fe370c1b4f8a4683c49624f7b697af4b22bae8680340243f",
+    "https://deno.land/x/vixalien_deno_blog@0.4.20/markedMiddleware/imageContainer.ts": "3c3f2f606158398bfba974d30beb9d161cf047fc9dc2355c5522d00eab5fafc1",
+    "https://deno.land/x/vixalien_deno_blog@0.4.20/markedMiddleware/util.ts": "8613de1bd873e975c59d76e1f5644d5605e3d4e42b189b5ddf581b0e466420cd",
+    "https://deno.land/x/vixalien_deno_blog@0.4.20/types.d.ts": "8359bba5182fd1efd0ee4048f462012a7aa6c2aa184c13795625a2122f0a6b2c",
     "https://esm.sh/feed@4.2.2": "628a9f6aef64e370077fc018c48c9e0fbfd1dedd6a211982ee55383e9856bde2",
     "https://esm.sh/marked@4.0.18": "ce7eacf9f5b6b90f3ff092441989372f6b611beeb31a009bcd32a4d254442ed8",
     "https://esm.sh/marked@5.1.0": "7d62e20b38fe01cb6c3791c9719c227112d83a708c2aa37dbc661049f49d554e",
@@ -335,5 +328,16 @@
     "https://esm.sh/v126/sax@1.2.4/denonext/sax.mjs": "dcc774c3fe80ebd4227774cd10c3664fe9c044fd0c863641ab59d958ce2215b5",
     "https://esm.sh/v126/xml-js@1.6.11/denonext/xml-js.mjs": "bf92e59d4a59dc82271d223f2a4b55ef7182a463fa0cc486ae6efd7f02fe034e",
     "https://raw.githubusercontent.com/kt3k/callsites/v1.0.0/mod.ts": "a5fdfa7916d03459fd4830ca526d493d5f4ce0ea91619905d524c9a3a5c3cd15"
+  },
+  "npm": {
+    "specifiers": {
+      "@types/node": "@types/node@18.11.18"
+    },
+    "packages": {
+      "@types/node@18.11.18": {
+        "integrity": "sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==",
+        "dependencies": {}
+      }
+    }
   }
 }
