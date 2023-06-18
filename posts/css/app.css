@@ -213,3 +213,7 @@ body.overflow-yes .block-image img {
 .intro-meta {
   font-weight: bold;
 }
+
+a.tags {
+  border-bottom-style: dotted;
+}

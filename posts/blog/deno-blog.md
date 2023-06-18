@@ -3,6 +3,7 @@ title: Hello Deno Blog!
 description: "Converting my blog to Deno. Spoiler Alert: it's easy and fast!"
 publish_date: 2022-08-20
 og:image: /images/posts/deno-blog/banner.webp
+tags: code
 ---
 
 Hello! I'm back to blogging!

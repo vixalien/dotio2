@@ -2,6 +2,7 @@
 title: Building a blog with Explosiv
 description: "Building a static lightweight and fast blog with Explosiv."
 publish_date: 2021-12-19
+tags: [code, tutorial]
 ---
 
 Earlier this year, I created [Explosiv ↗][explosiv], a lightweight & fast static site generator that allows pages to be built with JSX. This is a tutorial on how to build a functional blog with Explosiv.

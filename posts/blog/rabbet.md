@@ -2,6 +2,7 @@
 title: How Rabbet Works
 description: "A lightweight site that allow you to build pages from  links."
 publish_date: 2021-12-17
+tags: [code, projects, explained]
 ---
 
 **Rabbet** is a very small and minimal app that allows users to create pages on the Internet with a set of URLs.

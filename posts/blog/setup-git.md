@@ -3,6 +3,7 @@ title: Setup Git
 description: How I set up Git on my systems with using opinionated defaults.
 publish_date: 2022-04-01
 og:image: /images/posts/setup-git/banner.webp
+tags: [code, tutorial]
 ---
 
 ## How to setup Git

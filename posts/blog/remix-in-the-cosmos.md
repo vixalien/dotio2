@@ -2,6 +2,7 @@
 title: Setting up React Cosmos in Remix
 description: Build a sandbox for developing and testing UI components in Remix.
 publish_date: 2022-08-22
+tags: [code, tutorial]
 ---
 
 Hello friends!

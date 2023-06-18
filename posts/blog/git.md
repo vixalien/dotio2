@@ -2,6 +2,7 @@
 title: Learn Git!
 description: Learn to use Git, a popular Distributed Control System to effectively collaborate and manage your software projects.
 publish_date: 2021-08-01
+tags: [tutorial, code]
 ---
 
 So now you understand a certain programming language and coffee is your new best friend. But everywhere there is code, you see **Git**. They say a true developer must know Git and here you are, knowing nothing about Git, but longing to getting started.

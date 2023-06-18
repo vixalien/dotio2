@@ -2,6 +2,7 @@
 title: How Explosiv Works
 description: "The most lightweight, yet fully featured static-site generator you'll see."
 publish_date: 2021-01-28
+tags: [code, projects, explained]
 ---
 
 Explosiv [npm ↗][npm] [Github ↗][github] is a static site generator for JSX content.
