@@ -43,6 +43,21 @@ const MastodonIcon = () => {
   );
 };
 
+const CoffeeIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 640 512"
+      width="1em"
+      height="1em"
+      stroke="currentColor"
+      fill="currentColor"
+    >
+      <path d="M96 64c0-17.7 14.3-32 32-32H448h64c70.7 0 128 57.3 128 128s-57.3 128-128 128H480c0 53-43 96-96 96H192c-53 0-96-43-96-96V64zM480 224h32c35.3 0 64-28.7 64-64s-28.7-64-64-64H480V224zM32 416H544c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32z" />
+    </svg>
+  );
+};
+
 blog({
   author: "Angelo Verlain",
   title: "vixalien's blog",
@@ -51,16 +66,34 @@ blog({
   port: 3001,
   dateStyle: "medium",
   links: [
-    { title: "Email", url: "mailto:hey@vixalien.com" },
-    { title: "GitHub", url: "https://github.com/vixalien" },
+    {
+      title: "Donate",
+      url: "https://buymeacoffee.com/vixalien",
+      icon: <CoffeeIcon />,
+    },
+    {
+      title: "Email",
+      url: "mailto:hey@vixalien.com",
+    },
+    {
+      title: "GitHub",
+      url: "https://github.com/vixalien",
+    },
     {
       title: "Mastodon",
       url: "https://mas.to/@vixalientoots",
       rel: "me",
       icon: <MastodonIcon />,
     },
-    { title: "Twitter", url: "https://twitter.com/vixalientweets" },
-    { title: "Resume.pdf", url: "/Resume.pdf", icon: <DocumentIcon /> },
+    {
+      title: "Twitter",
+      url: "https://twitter.com/vixalientweets",
+    },
+    {
+      title: "Resume.pdf",
+      url: "/Resume.pdf",
+      icon: <DocumentIcon />,
+    },
   ],
   canonicalUrl: Deno.env.get("URL"),
   description:
@@ -92,9 +125,18 @@ blog({
       sizes: "512x512",
       href: "/favicon/android-chrome-512x512.webp",
     },
-    { rel: "manifest", href: "/manifest.json" },
-    { rel: "shortcut icon", href: "/favicon.ico" },
-    { href: "/css/app.css", rel: "stylesheet" },
+    {
+      rel: "manifest",
+      href: "/manifest.json",
+    },
+    {
+      rel: "shortcut icon",
+      href: "/favicon.ico",
+    },
+    {
+      href: "/css/app.css",
+      rel: "stylesheet",
+    },
   ],
   lang: "en-US",
 });
