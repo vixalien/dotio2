@@ -36,29 +36,12 @@ body {
 }
 
 html {
-  font-family: system-ui,
-    /* macOS 10.11-10.12 */
-    -apple-system,
-    /* Windows 6+ */
-    "Segoe UI",
-    /* Android 4+ */
-    "Roboto",
-    /* Ubuntu 10.10+ */
-    "Ubuntu",
-    /* Gnome 3+ */
-    "Cantarell",
-    /* KDE Plasma 5+ */
-    "Noto Sans",
-    /* fallback */
-    sans-serif,
-    /* macOS emoji */
-    "Apple Color Emoji",
-    /* Windows emoji */
-    "Segoe UI Emoji",
-    /* Windows emoji */
-    "Segoe UI Symbol",
-    /* Linux emoji */
-    "Noto Color Emoji";
+  font-family: system-ui, /* macOS 10.11-10.12 */ -apple-system,
+    /* Windows 6+ */ "Segoe UI", /* Android 4+ */ "Roboto",
+    /* Ubuntu 10.10+ */ "Ubuntu", /* Gnome 3+ */ "Cantarell",
+    /* KDE Plasma 5+ */ "Noto Sans", /* fallback */ sans-serif,
+    /* macOS emoji */ "Apple Color Emoji", /* Windows emoji */ "Segoe UI Emoji",
+    /* Windows emoji */ "Segoe UI Symbol", /* Linux emoji */ "Noto Color Emoji";
 }
 
 html,
@@ -90,7 +73,7 @@ table {
 }
 
 ul {
-  list-style: '–  ';
+  list-style: "–  ";
 }
 
 li {
@@ -106,8 +89,13 @@ hr {
 a {
   color: var(--link);
   text-decoration: none;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
+  border-bottom: 1px inset transparent;
+}
+
+a:hover,
+a:focus,
+a:active {
+  border-bottom-color: currentColor;
 }
 
 .overflow-yes .block-code,
@@ -123,10 +111,27 @@ a {
   max-width: calc(100vw - calc(var(--padding-right) + var(--padding-left)));
 }
 
-.posts li p {
-  margin-bottom: 10px;
-  display: inline-table;
-  display: -webkit-inline-box;
+.posts > p {
+  margin-bottom: 4em;
+}
+
+.posts > p a.post-title {
+  font-size: 1.1em;
+  font-weight: 900;
+  border-bottom-width: 2px;
+}
+
+.posts > p a.post-image {
+  border-bottom: none;
+}
+
+.posts > p a.post-image img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.5em;
 }
 
 .container {
@@ -191,7 +196,6 @@ body.overflow-yes .block-image img {
 }
 
 .intro h1 {
-  font-size: 2.5em;
   margin-bottom: 0;
 }
 
@@ -200,7 +204,7 @@ body.overflow-yes .block-image img {
 }
 
 .tags a {
-  color: inherit
+  color: inherit;
 }
 
 .link-with-icon {
@@ -216,4 +220,30 @@ body.overflow-yes .block-image img {
 
 a.tags {
   border-bottom-style: dotted;
+  border-bottom-color: inherit;
+}
+
+a.tags:focus,
+a.tags:hover,
+a.tags:focus {
+  border-bottom-style: solid;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.8em;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+
+h2 {
+  font-size: 2.3em;
+  font-weight: 800;
+  opacity: 0.8;
+}
+
+h3 {
+  font-size: 1.8em;
+  font-weight: 800;
+  opacity: 0.6;
 }
