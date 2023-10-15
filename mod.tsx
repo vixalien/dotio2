@@ -5,7 +5,7 @@ import blog, {
   highlight,
   imageContainer,
   redirects,
-} from "https://deno.land/x/vixalien_deno_blog@0.5.1/blog.tsx";
+} from "https://deno.land/x/vixalien_deno_blog@0.5.2/blog.tsx";
 
 const DocumentIcon = () => {
   return (
