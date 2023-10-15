@@ -247,3 +247,12 @@ h3 {
   font-weight: 800;
   opacity: 0.6;
 }
+
+a:has(code) {
+  border: none;
+}
+a:has(code):is(:hover, :focus, :active) code {
+  background-color: var(--link);
+  color: var(--bg);
+  border-color: var(--link);
+}
