@@ -98,8 +98,8 @@ blog({
   ],
   canonicalUrl: Deno.env.get("URL"),
   description:
-    `Hello! I'm Angelo Verlain, but you can call me vixalien. I am a web \
-    developer. This is my website, a collection of projects and writings.`,
+    `Hello! I'm Angelo Verlain, but you can call me vixalien. I am a web and \
+    GTK developer and this is my website, a collection of projects and writings.`,
   middlewares: [
     await highlight(),
     await imageContainer(),
