@@ -64,7 +64,8 @@ blog({
   avatar: "favicon/maskable.webp",
   avatarClass: "border-none rounded-full",
   port: 3001,
-  dateStyle: "medium",
+  dateFormat: (date) =>
+    new Intl.DateTimeFormat("en-GB", { dateStyle: "medium" }).format(date),
   links: [
     {
       title: "Donate",
