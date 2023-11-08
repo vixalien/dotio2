@@ -68,6 +68,10 @@ blog({
     new Intl.DateTimeFormat("en-GB", { dateStyle: "medium" }).format(date),
   links: [
     {
+      title: "GitHub",
+      url: "https://github.com/vixalien",
+    },
+    {
       title: "Donate",
       url: "https://buymeacoffee.com/vixalien",
       icon: <CoffeeIcon />,
@@ -75,10 +79,6 @@ blog({
     {
       title: "Email",
       url: "mailto:hey@vixalien.com",
-    },
-    {
-      title: "GitHub",
-      url: "https://github.com/vixalien",
     },
     {
       title: "Mastodon",
