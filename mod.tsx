@@ -87,10 +87,6 @@ blog({
       icon: <MastodonIcon />,
     },
     {
-      title: "Twitter",
-      url: "https://twitter.com/vixalientweets",
-    },
-    {
       title: "Resume.pdf",
       url: "/Resume.pdf",
       icon: <DocumentIcon />,
