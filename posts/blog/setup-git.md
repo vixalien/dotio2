@@ -6,6 +6,8 @@ og:image: /images/posts/setup-git/banner.webp
 tags: [code, tutorial]
 ---
 
+After you've [learnt the basics of Git](/blog/git), it's time to make Git your own by creating a workflow that suits you.
+
 ## How to setup Git
 
 This is my default setup
@@ -59,8 +61,9 @@ Create a file called `.gitconfig` in your home directory. On Windows, it is `C:\
 [color]
 	ui = true
 # Set editor to VS Code
+# The `-w` is so that VS Code waits to return until we close any files opened by Git
 [core]
-      editor = code
+      editor = code -w
 
 ```
 
