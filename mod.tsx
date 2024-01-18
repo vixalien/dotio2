@@ -5,7 +5,7 @@ import blog, {
   highlight,
   imageContainer,
   redirects,
-} from "https://deno.land/x/vixalien_deno_blog@0.5.7/blog.tsx";
+} from "https://deno.land/x/vixalien_deno_blog@0.6.0/blog.tsx";
 
 const DocumentIcon = () => {
   return (
@@ -97,8 +97,8 @@ blog({
     `Hello! I'm Angelo Verlain, but you can call me vixalien. I am a web and \
     GTK developer and this is my website, a collection of projects and writings.`,
   middlewares: [
-    await highlight(),
-    await imageContainer(),
+    highlight(),
+    imageContainer({ mediumZoom: true }),
     redirects({
       "/feed/feed.rss": "/feed",
       "/blog": "/",

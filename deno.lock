@@ -1,5 +1,21 @@
 {
   "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:@types/node": "npm:@types/node@18.16.19"
+    },
+    "npm": {
+      "@types/node@18.16.19": {
+        "integrity": "sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==",
+        "dependencies": {}
+      }
+    }
+  },
+  "redirects": {
+    "https://esm.sh/v133/@types/katex@~0.16/index.d.ts": "https://esm.sh/v133/@types/katex@0.16.7/index.d.ts",
+    "https://esm.sh/v133/@types/marked@^5/index.d.ts": "https://esm.sh/v133/@types/marked@5.0.2/index.d.ts",
+    "https://esm.sh/v133/@types/remove-markdown@^0/index.d.ts": "https://esm.sh/v133/@types/remove-markdown@0.3.2/index.d.ts"
+  },
   "remote": {
     "https://cdn.skypack.dev/-/highlight.js@v11.6.0-4W1e4sNTmpsDP0C1l7xy/dist=es2019,mode=imports/optimized/common/core-6fff0e6f.js": "19f0aebe2ae7ed8c14a06278d72149a4869bb9f3e70b4f027890847a18870e73",
     "https://cdn.skypack.dev/-/highlight.js@v11.6.0-4W1e4sNTmpsDP0C1l7xy/dist=es2019,mode=imports/optimized/common/wasm-225926ab.js": "382aafa96667599876ab1db1cd6bb3e22f1f9e116b3bd7a01eacb50b95647f90",
