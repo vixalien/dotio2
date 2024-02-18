@@ -1,5 +1,5 @@
 {
   "tasks": {
-    "dev": "deno run -A --watch mod.tsx --dev"
+    "dev": "deno run -A --watch=posts mod.tsx --dev"
   }
 }
