@@ -23,5 +23,5 @@
 	],
 	"theme_color": "#030f1b",
 	"background_color": "#fff",
-	"display": "minimal-ui"
+	"display": "standalone"
 }
