@@ -306,15 +306,15 @@ Also create a file `/etc/kernel/cmdline` that will contain arguments passed to
 the kernel from the bootloader (UKI, in this case).
 
 ```
-root=UUID=5021db58-cc3a-4829-a630-2d468f8d1761 \
-rootflags=subvol=@ \
+root=UUID=5021db58-cc3a-4829-a630-2d468f8d1761
+rootflags=subvol=@
 rootfstype=btrfs
-cryptroot=UUID=0db973a0-1b95-4a23-a63f-cb6248fe2bf7 \
-cryptdm=lvmcrypt \
-cryptkey \
-modules=sd-mod,btrfs,nvme \
-quiet \
-ro \
+cryptroot=UUID=0db973a0-1b95-4a23-a63f-cb6248fe2bf7
+cryptdm=lvmcrypt
+cryptkey
+modules=sd-mod,btrfs,nvme
+quiet
+ro
 ```
 
 The `root` UUID can be determined with:
