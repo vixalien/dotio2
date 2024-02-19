@@ -57,10 +57,17 @@ installations.
 
 ### Installing the necessary packages.
 
-For partitioning, we will use gdisk
+For partitioning, we will use gdisk. Let's also install other packages for ext4
+and btrfs filesystems.
 
 ```sh
-apk add lsblk gptfdisk
+apk add lsblk gptfdisk btrfs-progs e2fsprogs
+```
+
+Activate the btrfs kernel module:
+
+```sh
+modprobe btrfs
 ```
 
 cryptsetup is needed for LUKS encryption
@@ -361,8 +368,7 @@ copied into `/boot`
 apk fix kernel-hooks
 ```
 
-> Upgrade
-> Setup apk package cache
+> Upgrade Setup apk package cache
 
 Resources:
 
