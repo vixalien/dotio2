@@ -398,9 +398,37 @@ copied into `/boot`
 apk fix kernel-hooks
 ```
 
-> Upgrade Setup apk package cache
+### Hibernation
 
-Resources:
+To setup hibernation, we'll first need to find the UUID of our swap partition:
+
+```sh
+lsblk -f
+```
+
+Edit the `/etc/kernel/cmdline` to let the system know where you will be resuming
+from.
+
+```prop
+resume=UUID=<UUID of /dev/vg0/swap>
+```
+
+Enable the swap service during boot:
+
+```sh
+rc-update add swap default
+```
+
+Install `zzz` and test hibernation
+
+```sh
+apk add zzz
+zzz -Z # or ZZZ
+```
+
+> Upgrade Setup
+
+References:
 
 - ["Setting up an Alpine Linux workstation" by Hugo Osvaldo Barrera][hugo-guide]
 - ["In Praise of Alpine and APK" by Hugo Osvaldo Barrera](https://whynothugo.nl/journal/2023/02/18/in-praise-of-alpine-and-apk/)
