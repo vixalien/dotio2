@@ -144,13 +144,13 @@ cryptsetup luksOpen /dev/nvme0n1p2 lvmcrypt
 Create a physical volume
 
 ```sh
-pvcreate /dev/mapper/lvmcrypt
+pvcreate /dev/vg0/lvmcrypt
 ```
 
 Create a virtual volume named `vg0` (or something else, this one is memorable)
 
 ```sh
-vgcreate vg0 /dev/mapper/lvmcrypt
+vgcreate vg0 /dev/vg0/lvmcrypt
 ```
 
 #### Create partitions
@@ -171,35 +171,42 @@ mkfs.btrfs /dev/vg0/alpine
 mkfs.ext4 /dev/vg0/home
 ```
 
-Activate swap
+#### Activate swap
 
 ```sh
 mkswap /dev/vg0/swap
-mkswap /dev/vg0/swap
+swapon /dev/vg0/swap
 ```
 
-#### Mount partitions
+#### Create Btrfs Subvolumes
 
 Temporarily mount the `alpine` partition to create subvolumes.
 
 ```sh
-mount /dev/mapper/alpine /mnt
+mount /dev/vg0/alpine /mnt
 ```
 
 Create the subvolumes adapted from
-[Snapper's Suggested filesystem layour][snapper-layout]
+[Snapper's Suggested filesystem layout][snapper-layout]
 
 ```sh
-# The directories are created implicitly
 btrfs subvolume create /mnt/@ # /
 btrfs subvolume create /mnt/@snapshots # /.snapshots 
 btrfs subvolume create /mnt/@var_log # /var/log
 ```
 
-Change the default subvolume to `@`
+Find the id of the `@` subvolume. Note it as `<root-subvol-id>`. It will
+probably be 256 or something.
 
 ```sh
-btrfs subvolume set-default @ /
+btrfs subvolume list /mnt
+```
+
+Change the default subvolume to `@` (Replace `<root-subvol-id>` with the ID you
+got from the previous step.)
+
+```sh
+btrfs subvolume set-default <root-subvol-id> /
 ```
 
 Unmount the partition
@@ -208,23 +215,25 @@ Unmount the partition
 umount /mnt
 ```
 
+#### Mount partitions
+
 Create mountpoints and mount our partitions and subvolumes
 
 ```sh
-mount /dev/mapper/alpine -o subvol=@ /mnt/
+mount /dev/vg0/alpine -o subvol=@ /mnt/
 
 # Create mountpoints
 mkdir -p /mnt/boot /mnt/boot /mnt/var/log /mnt/.snapshots
 
 # Mount the remaninig subvolumes
-mount /dev/mapper/alpine -o subvol=@snapshots /mnt/.snapshots
-mount /dev/mapper/alpine -o subvol=@var_log /mnt/var/log
+mount /dev/vg0/alpine -o subvol=@snapshots /mnt/.snapshots
+mount /dev/vg0/alpine -o subvol=@var_log /mnt/var/log
 
 # Mount the efi system partition
 mount /dev/nvme0n1p1 /mnt/boot
 
 # Mount the home partition
-mount /dev/mapper/home /mnt/home
+mount /dev/vg0/home /mnt/home
 ```
 
 ## Installation
@@ -258,6 +267,16 @@ http://dl-cdn.alpinelinux.org/alpine/edge/testing
 
 > You can choose a [mirror] closer to you if you want
 
+#### Setup a local apk cache
+
+I like having my downloaded apks available locally. In case I want to reinstall
+them or something... You can skip this step if you want a really minimal design.
+When prompted, say `/var/cache/apk` for the cache directory.
+
+```sh
+setup-apkcache
+```
+
 ### (No) bootloader
 
 The next step would be to install a bootloader like GRUB or
@@ -275,12 +294,10 @@ contains the following, and some more:
 The stub itself is provided by the `gummiboot-efistub` package. It is considered
 deprecated, but no solid alternative is available. The bundle itself is built by
 `efi-mkuki`, and `secureboot-hook` will rebuild the bundle after each kernel
-upgrade. We also use `efibootmgr` to create a boot entry that shows in the EFI
-firmware, although you can always use the UFI's boot from file function or
-execute the UKI from a UEFI shell.
+upgrade.
 
 ```sh
-apk add secureboot-hook gummiboot-efistub efibootmgr
+apk add secureboot-hook gummiboot-efistub
 ```
 
 Install `blkid` which will be used in a moment. This tool prints the UUID (and a
@@ -327,7 +344,7 @@ ro
 The `root` UUID can be determined with:
 
 ```sh
-blkid /dev/mapper/alpine >> /etc/kernel/cmdline
+blkid /dev/vg0/alpine >> /etc/kernel/cmdline
 ```
 
 The `cryptroot` UUID:
@@ -351,8 +368,21 @@ disable_trigger=yes
 
 #### Boot Entry
 
-Now, let's create a boot entry that will (hopefully) be visible in the UEFI
-firmare.
+We use `efibootmgr` to create a boot entry that (hopefully) shows in the EFI
+firmware, although you can always use the UFI's boot from file function or
+execute the UKI from a UEFI shell. I heard reports that the boot entries may
+disappear after firmware upgrades or other vendor EFI quirks, so bear that in
+mind.
+
+First exit the chroot using `exit`. We can't use `efibootmgr` inside the chroot
+because it won't be able to read and set the EFI variables, mounted at
+`/sys/firmware/efi/efivars`. Then install efibootmgr:
+
+```sh
+apk add efibootmgr
+```
+
+Then create a boot entry named "Alpine Linux".
 
 ```sh
 efibootmgr --disk /dev/nvme0n1 --part 1 --create --label 'Alpine Linux' --load /EFI/Linux/alpine-linux-edge.efi --verbose
