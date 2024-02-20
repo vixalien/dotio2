@@ -191,7 +191,6 @@ Create the subvolumes adapted from
 
 ```sh
 btrfs subvolume create /mnt/@ # /
-btrfs subvolume create /mnt/@snapshots # /.snapshots 
 btrfs subvolume create /mnt/@var_log # /var/log
 ```
 
@@ -203,7 +202,7 @@ btrfs subvolume list /mnt
 ```
 
 Change the default subvolume to `@` (Replace `<root-subvol-id>` with the ID you
-got from the previous step.)
+got from the previous step).
 
 ```sh
 btrfs subvolume set-default <root-subvol-id> /
@@ -223,10 +222,9 @@ Create mountpoints and mount our partitions and subvolumes
 mount /dev/vg0/alpine -o subvol=@ /mnt/
 
 # Create mountpoints
-mkdir -p /mnt/boot /mnt/boot /mnt/var/log /mnt/.snapshots
+mkdir -p /mnt/boot /mnt/boot /mnt/var/log
 
-# Mount the remaninig subvolumes
-mount /dev/vg0/alpine -o subvol=@snapshots /mnt/.snapshots
+# Mount the remaining subvolumes
 mount /dev/vg0/alpine -o subvol=@var_log /mnt/var/log
 
 # Mount the efi system partition
@@ -426,7 +424,180 @@ apk add zzz
 zzz -Z # or ZZZ
 ```
 
-> Upgrade Setup
+You can now reboot and test your system
+
+## Desktop
+
+### Snapper
+
+[Snapper] is a tool to automatically or manually take snapshots of btrfs
+systems. I use it because I sometimes mess up my root system. Let's install it
+and setup up our first snapshot.
+
+> Remember: Snapshots are **NOT** backups.
+
+```sh
+apk add snapper
+
+snapper -c root create-config /
+```
+
+This will create a new subvolume at `/.snapshots`. Each snapshot will be stored
+at `/.snapshot/<snapshot-number>/snapshot`. It will also add a new line to
+`/etc/conf.d/snapper`.
+
+Create a first snapshot:
+
+```sh
+snapper -c config create --description 'Base Installation'
+```
+
+You can also use LVM snaphots, but that is an alternative I have not explored
+yet. It like a more interesting option tbf.
+
+## Enable & Start function
+
+I like to have this function handy. It is synonymous to
+`systemctl enable --now`. You can put it in /etc/profile or somewhere
+
+```sh
+rc-init() {
+  if [ $# -lt 1 ] || [ $# -gt 2 ]
+  then
+    >&2 echo "Invalid number of arguments provided (1-2 acceptable)"
+    return 1
+  fi
+
+  RUNLEVEL="${2:-default}";
+  rc-service $1 start
+  rc-update add $1 $RUNLEVEL;
+}
+
+rc-deinit() {
+  if [ $# -lt 1 ] || [ $# -gt 2 ]
+  then
+    >&2 echo "Invalid number of arguments provided (1-2 acceptable)"
+    return 1
+  fi
+
+  RUNLEVEL="${2:-default}";
+  rc-service $1 stop
+  rc-update del $1 $RUNLEVEL;
+}
+```
+
+## GNOME
+
+Setup the GNOME Desktop Environment (what I use, No I don't use sway or hyprland
+yet:\))
+
+```sh
+setup-desktop gnome
+```
+
+Allow updates to be carried out in GNOME Software.
+
+```sh
+rc-init apk-polkit-server
+```
+
+## NetworkManager
+
+Setup NetworkManager to manage your... network. Also setup WiFi and a TUI
+(`nmtui`). I also prefer using `iwd` instead of `wpa_supplicant` as the actual
+WiFi backend, since it's what I'm familiar with.
+
+```sh
+apk add networkmanager networkmanager-wifi networkmanager-wifi iwd
+```
+
+Tell networkmanager to use `iwd` by editing
+`/etc/NetworkManager/NetworkManager.conf`:
+
+```toml
+[device]
+wifi.backend=iwd
+```
+
+Enable and activate the service:
+
+```sh
+rc-init iwd
+rc-init networkmanager
+```
+
+Edit `/etc/network/interfaces` and remove any lines containing `wlan0` and
+`eth0`. These were setup using the installer, but we don't need that anymore.
+
+```
+auto lo
+iface lo inet loopback
+
+# auto wlan0
+# iface wlan0 inet dhcp
+```
+
+You might also see that `chronyd` takes a while to sync on boot. We can tell it
+to do that in the background on boot instead by editing `/etc/conf.d/chronyd` and setting
+
+```
+FAST_STARTUP=yes
+```
+
+## Bluetooth
+
+```sh
+apk add bluez bluez-openrc
+```
+
+Reboot or load the kernel module
+
+```sh
+modprobe btusb
+```
+
+Start & enable the bluetooth service
+
+```sh
+rc-service bluetooth start
+rc-update add bluetooth default
+```
+
+## Sound
+
+By default, checking `dmesg` seems to indicate missing firmware:
+
+```
+> dmesg | grep firmw
+[    1.096997] i915 0000:00:02.0: [drm] Finished loading DMC firmware i915/tgl_dmc_ver2_12.bin (v2.12)
+[   36.239398] iwlwifi 0000:00:14.3: loaded firmware version 77.2df8986f.0 QuZ-a0-hr-b0-77.ucode op_mode iwlmvm
+[   36.363387] Bluetooth: hci0: Minimum firmware build 1 week 10 2014
+[   36.365863] Bluetooth: hci0: Found device firmware: intel/ibt-19-0-4.sfi
+[   36.447917] sof-audio-pci-intel-tgl 0000:00:1f.3: Direct firmware load for intel/sof/sof-tgl.ri failed with error -2
+[   36.447919] sof-audio-pci-intel-tgl 0000:00:1f.3: error: sof firmware file is missing, you might need to
+[   36.447921] sof-audio-pci-intel-tgl 0000:00:1f.3: error: failed to load DSP firmware -2
+[   36.714932] psmouse serio1: trackpoint: Elan TrackPoint firmware: 0xa1, buttons: 3/3
+[   38.519487] Bluetooth: hci0: Waiting for firmware download to complete
+```
+
+```sh
+apk add sof-firmware
+```
+
+Reboot or try to load the kernel module using the relevant soundcard name found
+using `find /lib/modules/* -type f -name '*.zst' -name '*sof*' -name '*tgl'`:
+
+```sh
+modprobe sof-audio-pci-intel-tgl
+```
+
+Install PipeWire packages and friends.
+
+```sh
+apk pipewire wireplumber pipewire-pulse pipewire-alsa pipewire-spa-bluez gst-plugin-pipewire
+```
+
+> Use Unl0kr
 
 References:
 
@@ -443,3 +614,6 @@ References:
 [mirror]: https://mirrors.alpinelinux.org/
 [uki]: https://wiki.archlinux.org/title/Unified_kernel_image
 [initramfs]: https://wiki.archlinux.org/title/Arch_boot_process#initramfs
+
+```
+```
