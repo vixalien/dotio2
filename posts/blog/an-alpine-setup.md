@@ -3,7 +3,7 @@ title: My Alpine Setup
 description: Exploring a minimal but nice alpine setup.
 publish_date: 2024-02-18
 tags: [linux]
-og:image: /images/posts/an-alpine-setup/banner.wbp
+og:image: /images/posts/an-alpine-setup/banner.webp
 ---
 
 This is a guide to install alpine, based on my own likings. It is a relatively
