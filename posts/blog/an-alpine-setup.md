@@ -3,13 +3,34 @@ title: My Alpine Setup
 description: Exploring a minimal but nice alpine setup.
 publish_date: 2024-02-18
 tags: [linux]
+og:image: /images/posts/an-alpine-setup/banner.png
 ---
 
-I love Alpine. TPM using [Clevis]. Encrypted home (coming soon, with
-[pam_mount])
+This is a guide to install alpine, based on my own likings. It is a relatively
+easy install.
 
 This installation guide is very inspired and based on
 [Hugo's Installation Guide][hugo-guide].
+
+## (Some) security considerations
+
+This install is a bit more secure because it uses an encrypted filesystem (LUKS
+on top of LVM).
+
+The whole is configured to work with UEFI + Secureboot, and the disk is
+automatically decrypted with the TPM (this secure chip inside your laptop) using
+[Clevis], meaning, if you boot on your laptop, your file contents will be
+decrypted automatically. You will need to manually enter your password if the
+storage drive is used outside of your computer (evil maid attack).
+
+To secure your laptop better, enable Secure Boot, and set a very strong
+BIOS/UEFI password.
+
+A more secure approach would be to use something like [systemd-homed] that
+encrypts each user's home directory separately, but that requires systemd...
+There's a similar tool for alpine called [pam_mount], but it's not compatible
+with home directories created with systemd-homed, and I haven't figured a very
+nice way to make it work on Alpine.
 
 ## Setup the installer
 
@@ -428,6 +449,47 @@ You can now reboot and test your system
 
 ## Desktop
 
+### Fonts
+
+Installing the Noto fonts make almost every characters rendered (CJK and emoji):
+
+```sh
+apk add font-noto font-noto-cjk font-noto-extra font-noto-emoji
+```
+
+Install my preferred fonts
+
+```sh
+apk add font-jetbrains-mono font-liberation-serif
+```
+
+And configure fontconfig to use them at `/etc/fonts/local.conf`
+
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <alias>
+    <family>sans-serif</family>
+    <prefer>
+      <family>Cantarell</family>
+    </prefer>
+  </alias>
+  <alias>
+    <family>monospace</family>
+    <prefer>
+      <family>JetBrains Mono</family>
+    </prefer>
+  </alias>
+  <alias>
+    <family>serif</family>
+    <prefer>
+      <family>Liberation Serif</family>
+    </prefer>
+  </alias>
+</fontconfig>
+```
+
 ### Snapper
 
 [Snapper] is a tool to automatically or manually take snapshots of btrfs
@@ -455,7 +517,7 @@ snapper -c config create --description 'Base Installation'
 You can also use LVM snaphots, but that is an alternative I have not explored
 yet. It like a more interesting option tbf.
 
-## Enable & Start function
+### Enable & Start function
 
 I like to have this function handy. It is synonymous to
 `systemctl enable --now`. You can put it in /etc/profile or somewhere
@@ -486,7 +548,7 @@ rc-deinit() {
 }
 ```
 
-## GNOME
+### GNOME
 
 Setup the GNOME Desktop Environment (what I use, No I don't use sway or hyprland
 yet:\))
@@ -501,53 +563,84 @@ Allow updates to be carried out in GNOME Software.
 rc-init apk-polkit-server
 ```
 
-## NetworkManager
+Allow switching the power profiles in the quick settings
+
+```sh
+apk add power-profiles-daemon
+```
+
+If you have a convertible, allow turning your laptop to flip it
+
+```sh
+apk add iio-sensor-proxy
+```
+
+Hardware acceleration
+
+```sh
+apk add intel-media-driver
+```
+
+### NetworkManager
 
 Setup NetworkManager to manage your... network. Also setup WiFi and a TUI
 (`nmtui`). I also prefer using `iwd` instead of `wpa_supplicant` as the actual
 WiFi backend, since it's what I'm familiar with.
 
 ```sh
-apk add networkmanager networkmanager-wifi networkmanager-wifi iwd
+apk add networkmanager networkmanager-wifi networkmanager-wifi networkmanager-dnsmasq
 ```
 
-Tell networkmanager to use `iwd` by editing
-`/etc/NetworkManager/NetworkManager.conf`:
+I like to use this configuration:
 
 ```toml
+[main] 
+dhcp=internal
+plugins=keyfile
+dns=dnsmasq
+
 [device]
-wifi.backend=iwd
+wifi.scan-rand-mac-address=yes
+wifi.backend=wpa_supplicant
+
+[connectivity]
+uri=http://nmcheck.gnome.org/check_network_status.txt
 ```
+
+There are probably other configuration options to set.
 
 Enable and activate the service:
 
 ```sh
-rc-init iwd
 rc-init networkmanager
 ```
 
-Edit `/etc/network/interfaces` and remove any lines containing `wlan0` and
-`eth0`. These were setup using the installer, but we don't need that anymore.
+Since we are now using NetworkManager to manage our connections, we can disable
+the default networking service.
 
-```
-auto lo
-iface lo inet loopback
-
-# auto wlan0
-# iface wlan0 inet dhcp
+```sh
+rc-update del networking
 ```
 
 You might also see that `chronyd` takes a while to sync on boot. We can tell it
-to do that in the background on boot instead by editing `/etc/conf.d/chronyd` and setting
+to do that in the background on boot instead by editing `/etc/conf.d/chronyd`
+and setting
 
 ```
 FAST_STARTUP=yes
 ```
 
-## Bluetooth
+### Bluetooth
 
 ```sh
 apk add bluez bluez-openrc
+```
+
+Enable the Bluetooth experimental features to view the battery charge of your
+bluetooth earphones at `/etc/bluetooth/main.conf`
+
+```toml
+Experimental=True
 ```
 
 Reboot or load the kernel module
@@ -563,7 +656,7 @@ rc-service bluetooth start
 rc-update add bluetooth default
 ```
 
-## Sound
+### Sound
 
 By default, checking `dmesg` seems to indicate missing firmware:
 
@@ -597,7 +690,10 @@ Install PipeWire packages and friends.
 apk pipewire wireplumber pipewire-pulse pipewire-alsa pipewire-spa-bluez gst-plugin-pipewire
 ```
 
-> Use Unl0kr
+## Future considerations
+
+- Use Unl0kr
+- Use Clevis
 
 References:
 
@@ -614,6 +710,8 @@ References:
 [mirror]: https://mirrors.alpinelinux.org/
 [uki]: https://wiki.archlinux.org/title/Unified_kernel_image
 [initramfs]: https://wiki.archlinux.org/title/Arch_boot_process#initramfs
-
-```
-```
+[clevis]: https://wiki.archlinux.org/title/Clevis
+[systemd-homed]: https://systemd.io/HOME_DIRECTORY/
+[pam_mount]: https://wiki.archlinux.org/title/pam_mount
+[lvm]: https://wiki.archlinux.org/title/LVM
+[snapper]: https://wiki.archlinux.org/title/Snapper
