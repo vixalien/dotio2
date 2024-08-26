@@ -1,6 +1,6 @@
 ---
 title: Workbench + TypeScript
-description: Adding TypeScript support to Workbench.
+description: Quickly prototyping and iterating on typesafe GNOME apps.
 publish_date: 2024-08-26
 tags: [linux]
 ---
