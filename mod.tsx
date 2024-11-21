@@ -78,7 +78,7 @@ blog({
     },
     {
       title: "Email",
-      url: "mailto:hey@vixalien.com",
+      url: "mailto:hey[at]vix[remove-this]alien[dot]com",
     },
     {
       title: "Mastodon",
